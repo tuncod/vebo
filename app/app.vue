@@ -6,6 +6,7 @@ import '@vidstack/react/player/styles/default/layouts/video.css';
 import 'vidstack/player';
 import 'vidstack/player/layouts/default';
 import 'vidstack/player/ui';
+
 </script>
 
 <template>
