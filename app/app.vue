@@ -14,6 +14,7 @@ const sidebarOpen = ref(false)
 
 const themeToggle = () => {
   document.documentElement.classList.toggle('dark')
+  document.documentElement.classList.toggle('light')
 }
 
 </script>
