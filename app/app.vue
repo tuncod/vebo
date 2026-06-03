@@ -22,6 +22,8 @@ const themeToggle = () => {
 <template>
   <div class="app">
 
+    <Html class="light" />
+
     <nav :class="['sidebar', { open: sidebarOpen }]" role="navigation" aria-label="Main navigation">
       <div class="sidebar-header">
         <a class="nav-logo" href="/">
@@ -57,7 +59,7 @@ const themeToggle = () => {
       </a>
     </header>
 
-    <h1 class="text-4xl text-red-600">Vebo TV</h1>
+    <h1 class="text-4xl text-red-600 mt-20">Vebo TV</h1>
 
   </div>
 </template>
