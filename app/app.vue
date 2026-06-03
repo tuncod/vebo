@@ -13,13 +13,13 @@ import 'vidstack/player/ui';
   <div>
     <h1 class="text-4xl text-red-600">Vebo</h1>
     <media-player
-  .viewType="video"
-  .streamType="on-demand"
-  .logLevel="warn"
-  .crossOrigin="true"
-  .playsInline="true"
-  .title="Sprite Fight"
-  .poster="https://files.vidstack.io/sprite-fight/poster.webp"
+  viewType="video"
+  streamType="on-demand"
+  logLevel="warn"
+  crossOrigin="true"
+  playsInline="true"
+  title="Sprite Fight"
+  poster="https://files.vidstack.io/sprite-fight/poster.webp"
 >
   <media-provider>
     <media-poster class="vds-poster"></media-poster>
