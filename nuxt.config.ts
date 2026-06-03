@@ -11,13 +11,7 @@ export default defineNuxtConfig({
           src: 'https://unpkg.com/eruda'
         },
         {
-          innerHTML: `
-            window.addEventListener('load', function () {
-              if (window.eruda) {
-                window.eruda.init();
-              }
-            });
-          `
+          textContent: 'eruda.init();'
         }
       ]
     }
