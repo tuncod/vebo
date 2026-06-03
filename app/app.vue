@@ -48,7 +48,7 @@ import 'vidstack/player/ui';
     />
   </media-provider>
   <media-video-layout
-    .thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
+    thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
   ></media-video-layout>
 </media-player>
   </div>
