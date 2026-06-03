@@ -31,10 +31,3 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
   ],
 })
-
-
-
-// nuxt.config.ts
-export default defineNuxtConfig({
-  
-})
