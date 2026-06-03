@@ -21,7 +21,7 @@ import 'vidstack/player/ui';
 >
   <media-provider>
     <media-poster class="vds-poster"></media-poster>
-    <source src="https://files.vidstack.io/sprite-fight/hls/stream.m3u8" />
+    <source src="https://test-streams.mux.dev/x36xhzz/url_6/193039199_mp4_h264_aac_hq_7.m3u8" />
     <track
       src="https://files.vidstack.io/sprite-fight/subs/english.vtt"
       label="English"
