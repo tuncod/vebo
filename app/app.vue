@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import '@vidstack/react/player/styles/default/theme.css';
-import '@vidstack/react/player/styles/default/layouts/audio.css';
-import '@vidstack/react/player/styles/default/layouts/video.css';
+import 'vidstack/player/styles/base.css';
 
 import 'vidstack/player';
-import 'vidstack/player/layouts/default';
 import 'vidstack/player/ui';
+import 'vidstack/icons';
 
 </script>
 
