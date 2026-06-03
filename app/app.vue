@@ -16,7 +16,6 @@ const sidebarOpen = ref(false)
 
 <template>
   <div class="app">
-    <h1 class="text-4xl text-red-600">Vebo TV</h1>
 
     <nav :class="['sidebar', { open: sidebarOpen }]" role="navigation" aria-label="Main navigation">
       <div class="sidebar-header">
@@ -40,6 +39,8 @@ const sidebarOpen = ref(false)
         </li>
       </ul>
     </nav>
+
+    <h1 class="text-4xl text-red-600">Vebo TV</h1>
 
   </div>
 </template>
