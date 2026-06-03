@@ -39,7 +39,20 @@ const sidebarOpen = ref(false)
       </ul>
     </nav>
 
-    <h1 class="text-4xl text-red-600" @click="sidebarOpen=!sidebarOpen">Vebo TV</h1>
+    <header class="mobile-header" role="banner">
+      <button class="mobile-menu-btn" :aria-expanded="String(sidebarOpen)" aria-controls="sidebar" aria-label="Open menu" @click="sidebarOpen=!sidebarOpen">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="nav-logo" href="/">
+        <span class="logo-icon">◈</span>
+        <span class="logo-text">CineVault</span>
+      </a>
+      <a class="mobile-search-btn" href="/search" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </a>
+    </header>
+
+    <h1 class="text-4xl text-red-600">Vebo TV</h1>
 
   </div>
 </template>
