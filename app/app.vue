@@ -12,6 +12,10 @@ const navLinks = [
 const route = ref('/')
 const sidebarOpen = ref(false)
 
+const themeToggle = () => {
+  document.documentElement.classList.toggle('dark')
+}
+
 </script>
 
 <template>
@@ -43,7 +47,7 @@ const sidebarOpen = ref(false)
       <button class="mobile-menu-btn" :aria-expanded="String(sidebarOpen)" aria-controls="sidebar" aria-label="Open menu" @click="sidebarOpen=!sidebarOpen">
         <span></span><span></span><span></span>
       </button>
-      <a class="nav-logo" href="/">
+      <a class="nav-logo" @click="themeToggle">
         <span class="logo-icon">◈</span>
         <span class="logo-text">CineVault</span>
       </a>
