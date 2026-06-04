@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-const movies = await ofetch('https://api.themoviedb.org/3/trending/movie/week', {
+const { data: movies } = await useFetch('https://api.themoviedb.org/3/trending/movie/week', {
   query: {
     api_key: '8301a21598f8b45668d5711a814f01f6',
   }
