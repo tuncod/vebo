@@ -12,5 +12,6 @@ const movies = await ofetch('https://api.themoviedb.org/3/trending/movie/week', 
 <template>
   <div>
     <h1 class="text-4xl text-red-600 mt-26">Index</h1>
+    {{ movies }}
   </div>
 </template>
