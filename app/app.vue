@@ -9,7 +9,8 @@ const navLinks = [
 ]
 
 // Routing
-const route = ref('/')
+// const route = ref('/')
+const route = useRoute()
 const sidebarOpen = ref(false)
 
 const themeToggle = () => {
@@ -35,7 +36,7 @@ const themeToggle = () => {
         <li v-for="link in navLinks" :key="link.route">
           <a
             class="nav-link"
-            :class="{ active: false }"
+            :class="{ active: route.path.startsWith(link.route) }"
             :aria-label="link.label"
             :href="link.route"
           >
@@ -59,7 +60,7 @@ const themeToggle = () => {
       </a>
     </header>
 
-    <h1 class="text-4xl text-red-600 mt-20">Vebo TV</h1>
+    <h1 class="text-4xl text-red-600 mt-26">Vebo TV {{ route.path }}</h1>
 
   </div>
 </template>
