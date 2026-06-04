@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+const theme = ref('light')
+
 const navLinks = [
   { route: '/',          label: 'nav_home',      icon: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>' },
   { route: '/search',    label: 'nav_search',    icon: '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>' },
@@ -14,8 +16,9 @@ const route = useRoute()
 const sidebarOpen = ref(false)
 
 const themeToggle = () => {
-  document.documentElement.classList.toggle('dark')
-  document.documentElement.classList.toggle('light')
+  // document.documentElement.classList.toggle('dark')
+  // document.documentElement.classList.toggle('light')
+  theme.value === 'light' ? theme.value = 'dark' : theme.value = 'light'
 }
 
 </script>
@@ -23,7 +26,7 @@ const themeToggle = () => {
 <template>
   <div class="app">
 
-    <Html class="light" />
+    <Html :class="theme" />
 
     <nav :class="['sidebar', { open: sidebarOpen }]" role="navigation" aria-label="Main navigation">
       <div class="sidebar-header">
