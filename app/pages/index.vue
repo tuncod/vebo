@@ -15,7 +15,7 @@ const { data: movies } = await useFetch('https://api.themoviedb.org/3/trending/m
 
     <section class="section">
       <div class="section-header">
-        <h2>Popular</h2>
+        <h2>Popular — شائع</h2>
       </div>
 
       <div class="scroll-row">
