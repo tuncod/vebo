@@ -36,7 +36,7 @@ const themeToggle = () => {
         <li v-for="link in navLinks" :key="link.route">
           <a
             class="nav-link"
-            :class="{ active: route.path.startsWith(link.route) }"
+            :class="{ active: route.path == link.route }"
             :aria-label="link.label"
             :href="link.route"
           >
