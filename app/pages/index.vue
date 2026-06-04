@@ -12,8 +12,6 @@ const { data: movies } = await useFetch('https://api.themoviedb.org/3/trending/m
 <template>
   <div>
     <h1 class="text-4xl text-red-600 mt-26">Index</h1>
-    {{ movies }}
-
 
     <section class="section">
       <div class="section-header">
@@ -36,7 +34,6 @@ const { data: movies } = await useFetch('https://api.themoviedb.org/3/trending/m
             decoding="async"
           />
       </div>
-    </div>
 
     </div>
   </section>
