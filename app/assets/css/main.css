@@ -1,5 +1,57 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand */
+  --color-primary: #e31221;
+  --color-primary-hover: #b00d19;
+
+  /* Layout */
+  --spacing-sidebar: 240px;
+  --spacing-header: 60px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgb(0 0 0 / 0.08);
+
+  /* Animation */
+  --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.45, 0, 0.55, 1);
+
+  --duration-fast: 150ms;
+  --duration-normal: 280ms;
+  --duration-slow: 480ms;
+}
+
+@layer base {
+  :root {
+    --color-bg-base: #f2f2f7;
+    --color-bg-surface: #ffffff;
+    --color-bg-card: #ffffff;
+    --color-bg-elevated: #f8f8fc;
+
+    --color-fg: #0a0a12;
+    --color-fg-secondary: #4a4a6a;
+    --color-fg-muted: #8888a8;
+
+    --color-border: rgb(0 0 0 / 0.08);
+    --color-border-strong: rgb(0 0 0 / 0.14);
+  }
+
+  .dark {
+    --color-bg-base: #0a0a0f;
+    --color-bg-surface: #111118;
+    --color-bg-card: #16161f;
+    --color-bg-elevated: #1e1e2a;
+
+    --color-fg: #f0f0f8;
+    --color-fg-secondary: #9494b0;
+    --color-fg-muted: #5c5c7a;
+
+    --color-border: rgb(255 255 255 / 0.07);
+    --color-border-strong: rgb(255 255 255 / 0.14);
+  }
+}
+
+
 /*
 @import '@fontsource/noto-sans/200.css';
 @import '@fontsource/noto-sans/300.css';
