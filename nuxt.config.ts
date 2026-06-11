@@ -53,5 +53,13 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'light', // default value of $colorMode.preference
     fallback: 'light', // fallback value if not system preference found
-  }
+  },
+
+  i18n: {
+    defaultLocale: 'ar',
+    locales: [
+      { code: 'ar', name: 'Arabic', file: 'ar.json' },
+      { code: 'en', name: 'English', file: 'en.json' },
+    ]
+  },
 })
