@@ -20,7 +20,10 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      - run: echo "approve-builds=true" >> .npmrc
+
       - run: rm pnpm-lock.yaml
+
       - run: pnpm install
 
       - run: pnpm build
