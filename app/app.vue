@@ -26,7 +26,7 @@ const themeToggle = () => {
 <template>
   <div class="app">
 
-    <div :class="theme" />
+    <div :class="theme" /> 
 
     <nav :class="['sidebar', { open: sidebarOpen }]" role="navigation" aria-label="Main navigation">
       <div class="sidebar-header">
