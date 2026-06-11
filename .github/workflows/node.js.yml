@@ -24,6 +24,8 @@ jobs:
 
       - run: rm pnpm-lock.yaml
 
+      - run: pnpm approve-builds --yes
+ 
       - run: pnpm install
 
       - run: pnpm build
