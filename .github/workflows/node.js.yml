@@ -23,8 +23,8 @@ jobs:
 
       - run: rm pnpm-lock.yaml
 
-      - run: pnpm approve-builds --yes
+      - run: pnpm approve-builds -all
  
-      - run: pnpm install
+      - run: pnpm install ---dangerously-allow-all-builds
 
       - run: pnpm build
