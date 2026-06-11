@@ -22,7 +22,7 @@ const { stop } = useIntersectionObserver(
 )
 
 // ─── Image loading ────────────────────────────────────────────────────────────
-const posterSrc = https://image.tmdb.org/t/p/w500' + props.src
+const posterSrc = 'https://image.tmdb.org/t/p/w500' + props.src
 
 const { isLoading, error, execute } = useImage(
   { src: posterSrc }
