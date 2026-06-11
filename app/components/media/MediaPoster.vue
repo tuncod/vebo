@@ -47,7 +47,7 @@ watch(isOnline, (online) => {
     <!-- Poster -->
     <div class="poster-wrapper">
       <!-- Not visible yet → skeleton -->
-      <div v-if="!visible" class="skeleton" />
+      <div bv-if="!visible" class="skeleton" />
 
       <!-- Visible + loading → shimmer -->
       <div v-else-if="isLoading" class="skeleton shimmer" />
