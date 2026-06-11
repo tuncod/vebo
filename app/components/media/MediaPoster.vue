@@ -37,6 +37,10 @@ watch(isOnline, (online) => {
     execute()
   }
 })
+
+onMounted(() => {
+  setInterval(() => console.log(error.value), 2000)
+})
 </script>
 
 <template>
@@ -45,7 +49,7 @@ watch(isOnline, (online) => {
     <!-- Poster -->
     <div class="poster-wrapper">
       <!-- Not visible yet → skeleton -->
-      <div bv-if="!visible" class="skeleton" />
+      <div v-if="false" class="skeleton" />
 
       <!-- Visible + loading → shimmer -->
       <div v-else-if="isLoading" class="skeleton shimmer" />
@@ -53,7 +57,7 @@ watch(isOnline, (online) => {
       <!-- Error state -->
       <div v-else-if="error" class="poster-error">
         <span v-if="!isOnline">📡 Offline — retrying when back online…</span>
-        <span v-else>Failed to load poster {{ error }} {{ posterSrc }}</span>
+        <span v-else>Failed to load poster {{ error.value }} {{ posterSrc }}</span>
       </div>
 
       <!-- Loaded -->
