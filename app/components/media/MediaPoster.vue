@@ -67,7 +67,7 @@ onMounted(() => {
         alt="movie.title"
         class="poster"
         loading="lazy"
-        hdecoding="async"
+        decoding="async"
       />
     </div>
 
