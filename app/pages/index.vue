@@ -1,13 +1,17 @@
 <script setup lang="ts">
 
-const { data: movies } = await useTmdb('trending/movie/week')
+const data = await useTmdb('trending/movie/week')
 
+onMounted(() => {
+  console.log(`the component is now mounted.`)
+  setInterval(() => console.log(data), 3000)
+})
 </script>
 
 <template>
   <div>
     <h1 class="text-4xl text-red-600 mt-26">Index</h1>
 
-    {{ movies }}
+    {{ data }}
   </div>
 </template>
