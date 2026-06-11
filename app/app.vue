@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+const colorMode = useColorMode()
+
 const theme = ref('light')
 
 const navLinks = [
@@ -19,6 +21,7 @@ const themeToggle = () => {
   // document.documentElement.classList.toggle('dark')
   // document.documentElement.classList.toggle('light')
   theme.value === 'light' ? theme.value = 'dark' : theme.value = 'light'
+  console.log(colorMode.preference)
 }
 
 </script>
