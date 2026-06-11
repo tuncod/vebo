@@ -62,10 +62,11 @@ watch(isOnline, (online) => {
       <!-- Loaded -->
       <img
         v-else
-        :src="posterSrc"
+        :src="'https://image.tmdb.org/t/p/w500' + props.src"
         alt="movie.title"
-        class="card-poster"
+        class="poster"
         loading="lazy"
+        hdecoding="async"
       />
     </div>
 
