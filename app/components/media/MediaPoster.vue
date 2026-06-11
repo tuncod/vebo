@@ -27,7 +27,7 @@ const posterSrc = computed(() =>
 )
 
 const { isLoading, error, execute } = useImage(
-  { src: posterSrc },
+  { src: posterSrc.value },
   { lazy: true }
 )
 
