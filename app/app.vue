@@ -25,7 +25,7 @@ const themeToggle = () => {
   // document.documentElement.classList.toggle('light')
   theme.value === 'light' ? theme.value = 'dark' : theme.value = 'light'
   colorMode.preference === 'light' ? colorMode.preference = 'dark' : colorMode.preference = 'light'
-  locale.value === 'ar' ? switchLocalePath('en') : switchLocalePath('ar')
+  locale.value === 'ar' ? setLocale('en') : setLocale('ar')
   console.log(colorMode.preference)
   console.log(locale.value)
 }
