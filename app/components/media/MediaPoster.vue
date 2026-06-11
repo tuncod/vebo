@@ -27,7 +27,7 @@ const posterSrc = computed(() =>
 )
 
 const { isLoading, error, execute } = useImage(
-  { src: posterSrc }
+  computed(() => ({ src: posterSrc.value }))
 )
 
 // ─── Network recovery ─────────────────────────────────────────────────────────
