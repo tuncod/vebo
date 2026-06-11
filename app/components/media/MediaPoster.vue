@@ -23,7 +23,7 @@ const { stop } = useIntersectionObserver(
 
 // ─── Image loading ────────────────────────────────────────────────────────────
 const posterSrc = computed(() =>
-  visible.value ? props.src : null
+  visible.value ? 'https://image.tmdb.org/t/p/w500' + props.src : null
 )
 
 const { isLoading, error, execute } = useImage(
@@ -62,7 +62,7 @@ watch(isOnline, (online) => {
       <!-- Loaded -->
       <img
         v-else
-        :src="'https://image.tmdb.org/t/p/w500' + props.src"
+        :src="posterSrc"
         alt="movie.title"
         class="poster"
         loading="lazy"
