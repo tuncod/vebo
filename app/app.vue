@@ -2,6 +2,9 @@
 
 const colorMode = useColorMode()
 
+const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
+
 const theme = ref('light')
 
 const navLinks = [
@@ -22,7 +25,9 @@ const themeToggle = () => {
   // document.documentElement.classList.toggle('light')
   theme.value === 'light' ? theme.value = 'dark' : theme.value = 'light'
   colorMode.preference === 'light' ? colorMode.preference = 'dark' : colorMode.preference = 'light'
+  locale.value === 'ar' ? switchLocalePath('en') : switchLocalePath('ar')
   console.log(colorMode.preference)
+  console.log(locale.value)
 }
 
 </script>
