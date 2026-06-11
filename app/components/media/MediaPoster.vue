@@ -56,7 +56,7 @@ watch(isOnline, (online) => {
       <!-- Error state -->
       <div v-else-if="error" class="poster-error">
         <span v-if="!isOnline">📡 Offline — retrying when back online…</span>
-        <span v-else>Failed to load poster {{ error.value }}</span>
+        <span v-else>Failed to load poster {{ error }} {{ posterSrc }}</span>
       </div>
 
       <!-- Loaded -->
