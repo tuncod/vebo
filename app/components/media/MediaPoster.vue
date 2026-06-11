@@ -49,7 +49,7 @@ onMounted(() => {
     <!-- Poster -->
     <div class="poster-wrapper">
       <!-- Not visible yet → skeleton -->
-      <div v-if="false" class="skeleton" />
+      <div v-if="visible" class="skeleton" />
 
       <!-- Visible + loading → shimmer -->
       <div v-else-if="isLoading" class="skeleton shimmer" />
