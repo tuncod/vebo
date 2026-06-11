@@ -2,7 +2,7 @@
 
 const colorMode = useColorMode()
 
-const { locale, locales } = useI18n()
+const { locale, locales, setLocale } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
 
 const theme = ref('light')
