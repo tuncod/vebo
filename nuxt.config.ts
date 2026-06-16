@@ -63,4 +63,41 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
     ]
   },
+
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'Vebo',
+      short_name: 'Vebo',
+      description: 'A Nuxt 4 Progressive Web App',
+      theme_color: '#FF3300',
+      icons: [
+        {
+          src: '/pwa-icon-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: '/pwa-icon-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ],
+    },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'https://vebo-eta.vercel.app/.*',
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'api-cache',
+            expiration: {
+              maxEntries: 50,
+              maxAgeSeconds: 86400,
+            },
+          },
+        },
+      ],
+    },
+  },
 })
