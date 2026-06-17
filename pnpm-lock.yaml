@@ -20,6 +20,9 @@ importers:
       '@fontsource/noto-sans-arabic':
         specifier: ^5.2.10
         version: 5.2.10
+      '@lorenzopant/tmdb':
+        specifier: ^1.22.2
+        version: 1.22.2
       '@nuxtjs/color-mode':
         specifier: ^4.0.1
         version: 4.0.1(magicast@0.5.3)
@@ -1669,6 +1672,9 @@ packages:
 
   '@kwsites/promise-deferred@1.1.1':
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+
+  '@lorenzopant/tmdb@1.22.2':
+    resolution: {integrity: sha512-lHbB9yLRjjvEWpBj6tmIKRwN39qixMfBFD56Z7FkGySqdHu1OgC8XmPCw4XllOcoL3LG5qFCvG/jI/MjfXkWgQ==}
 
   '@mapbox/node-pre-gyp@2.0.3':
     resolution: {integrity: sha512-uwPAhccfFJlsfCxMYTwOdVfOz3xqyj8xYL3zJj8f0pb30tLohnnFPhLuqp4/qoEz8sNxe4SESZedcBojRefIzg==}
@@ -8149,6 +8155,8 @@ snapshots:
       - supports-color
 
   '@kwsites/promise-deferred@1.1.1': {}
+
+  '@lorenzopant/tmdb@1.22.2': {}
 
   '@mapbox/node-pre-gyp@2.0.3':
     dependencies:

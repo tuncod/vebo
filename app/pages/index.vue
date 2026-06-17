@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: movies } = await useTmdb('trending/movie/week')
+const movies = await useTMDB().trending.movies({ time_window: 'week' })
 </script>
 <template>
   <div>

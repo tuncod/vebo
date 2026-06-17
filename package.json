@@ -16,6 +16,7 @@
     "@dailymotion/vast-client": "^6.4.5",
     "@fontsource/noto-sans": "^5.2.10",
     "@fontsource/noto-sans-arabic": "^5.2.10",
+    "@lorenzopant/tmdb": "^1.22.2",
     "@nuxtjs/color-mode": "^4.0.1",
     "@nuxtjs/i18n": "^10.4.0",
     "@pinia/nuxt": "0.11.3",
