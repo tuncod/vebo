@@ -20,7 +20,11 @@ class TMDB extends BaseTMDB {
   }
 }
 
+const timezoneStore = useTimezoneStore()
+
 const tmdb = new TMDB('demo-key', {
+  language: 'en-US', // 'ar-SA',
+  timezone: timezoneStore.timezone.value,
   images: {
     secure_images_url: true,
     autocomplete_paths: true,
@@ -28,6 +32,7 @@ const tmdb = new TMDB('demo-key', {
   logger: (entry) => {
     // console.log(`[${entry.type}] ${entry.method} ${entry.endpoint}`);
     // console.log(entry)
+    console.log(timezoneStore)
   },
 })
 
