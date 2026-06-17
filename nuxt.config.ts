@@ -71,7 +71,7 @@ export default defineNuxtConfig({
       short_name: 'Vebo',
       description: 'A Nuxt 4 Progressive Web App',
       theme_color: '#FF0033',
-      display: 'fullscreen',
+      display: 'standalone',
       icons: [
         {
           src: '/icons/icon-192x192.png',
