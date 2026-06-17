@@ -35,7 +35,7 @@ export const useTMDB = () => {
       // console.log(`[${entry.type}] ${entry.method} ${entry.endpoint}`);
       // console.log(entry)
       console.log(useTimezoneStore)
-      console.log(timezoneStore)
+      console.log(timezoneStore.timezone)
     },
   })
 
