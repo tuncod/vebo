@@ -1,4 +1,4 @@
-export const useUserStore = defineStore('timezone', () => {
+export const useTimezoneStore = defineStore('timezone', () => {
   const timezone = ref('Europe/Madrid')
 
   const setTimezone = (value: string) => {
