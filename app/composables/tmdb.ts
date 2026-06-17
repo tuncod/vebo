@@ -26,7 +26,7 @@ export const useTMDB = () => {
 
   const tmdb = new TMDB('demo-key', {
     language: 'en-US', // 'ar-SA',
-    timezone: '',
+    timezone: timezoneStore.timezone,
     images: {
       secure_images_url: true,
       autocomplete_paths: true,
