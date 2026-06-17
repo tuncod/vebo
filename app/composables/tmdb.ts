@@ -21,23 +21,23 @@ class TMDB extends BaseTMDB {
   }
 }
 
-const timezoneStore = useTimezoneStore()
-
-const tmdb = new TMDB('demo-key', {
-  language: 'en-US', // 'ar-SA',
-  timezone: '',
-  images: {
-    secure_images_url: true,
-    autocomplete_paths: true,
-  },
-  logger: (entry) => {
-    // console.log(`[${entry.type}] ${entry.method} ${entry.endpoint}`);
-    // console.log(entry)
-    console.log(useTimezoneStore)
-    console.log(timezoneStore)
-  },
-})
-
 export const useTMDB = () => {
+  const timezoneStore = useTimezoneStore()
+
+  const tmdb = new TMDB('demo-key', {
+    language: 'en-US', // 'ar-SA',
+    timezone: '',
+    images: {
+      secure_images_url: true,
+      autocomplete_paths: true,
+    },
+    logger: (entry) => {
+      // console.log(`[${entry.type}] ${entry.method} ${entry.endpoint}`);
+      // console.log(entry)
+      console.log(useTimezoneStore)
+      console.log(timezoneStore)
+    },
+  })
+
   return tmdb
 }
