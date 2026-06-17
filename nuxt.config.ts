@@ -110,19 +110,7 @@ export default defineNuxtConfig({
       includeAllowlist: true,
     },
     workbox: {
-      runtimeCaching: [
-        {
-          urlPattern: 'https://vebo-eta.vercel.app/.*',
-          handler: 'NetworkFirst',
-          options: {
-            cacheName: 'api-cache',
-            expiration: {
-              maxEntries: 50,
-              maxAgeSeconds: 86400,
-            },
-          },
-        },
-      ],
+      globPatterns: ['**/*']
     },
   },
 })
