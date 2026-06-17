@@ -7,12 +7,8 @@ const { items, title } = defineProps(['items', 'title'])
       <h2>{{ title }}</h2>
     </div>
 
-      <div class="scroll-row">
-        <MediaCard
-          v-for="item in items"
-          :poster="item.poster_path"
-        />
+    <div class="scroll-row">
+      <MediaCard v-for="item in items" :poster="item.poster_path" />
     </div>
-
   </section>
 </template>

@@ -5,9 +5,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'standalone/index.html')
-      }
+        main: resolve(__dirname, 'standalone/index.html'),
+      },
     },
     // outDir: 'dist-standalone'
-  }
+  },
 })

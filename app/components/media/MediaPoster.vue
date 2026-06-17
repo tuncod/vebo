@@ -7,7 +7,7 @@ const props = defineProps({
 })
 
 // ─── Lazy visibility ──────────────────────────────────────────────────────────
-const cardEl  = ref(null)
+const cardEl = ref(null)
 const visible = ref(false)
 
 const { stop } = useIntersectionObserver(
@@ -15,18 +15,16 @@ const { stop } = useIntersectionObserver(
   ([entry]) => {
     if (entry.isIntersecting) {
       visible.value = true
-      stop()           // observe once, then detach
+      stop() // observe once, then detach
     }
   },
-  { threshold: 0.1 }
+  { threshold: 0.1 },
 )
 
 // ─── Image loading ────────────────────────────────────────────────────────────
 const posterSrc = 'https://image.tmdb.org/t/p/w500' + props.src
 
-const { isLoading, error, execute } = useImage(
-  { src: posterSrc }
-)
+const { isLoading, error, execute } = useImage({ src: posterSrc })
 
 // ─── Network recovery ─────────────────────────────────────────────────────────
 const { isOnline } = useNetwork()
@@ -44,33 +42,24 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="cardEl" class="movie-card">
-
+  <div class="movie-card" ref="cardEl">
     <!-- Poster -->
     <div class="poster-wrapper">
       <!-- Not visible yet → skeleton -->
-      <div v-if="!visible" class="skeleton" />
+      <div class="skeleton" v-if="!visible" />
 
       <!-- Visible + loading → shimmer -->
-      <div v-else-if="isLoading" class="skeleton shimmer" />
+      <div class="skeleton shimmer" v-else-if="isLoading" />
 
       <!-- Error state -->
-      <div v-else-if="error" class="poster-error">
+      <div class="poster-error" v-else-if="error">
         <span v-if="!isOnline">📡 Offline — retrying when back online…</span>
         <span v-else>Failed to load poster {{ error.value }} {{ posterSrc }}</span>
       </div>
 
       <!-- Loaded -->
-      <img
-        v-else
-        :src="posterSrc"
-        alt="movie.title"
-        class="poster"
-        loading="lazy"
-        decoding="async"
-      />
+      <img class="poster" v-else :src="posterSrc" alt="movie.title" loading="lazy" decoding="async" />
     </div>
-
   </div>
 </template>
 
@@ -103,19 +92,18 @@ onMounted(() => {
 }
 
 .shimmer {
-  background: linear-gradient(
-    90deg,
-    #2a2a3e 25%,
-    #3a3a5e 50%,
-    #2a2a3e 75%
-  );
+  background: linear-gradient(90deg, #2a2a3e 25%, #3a3a5e 50%, #2a2a3e 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
 
 @keyframes shimmer {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .poster-error {

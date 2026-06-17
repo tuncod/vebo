@@ -5,7 +5,7 @@ const imdbId = 'tt22507484'
 const { data } = await ofetch('https://streamdata.vaplayer.ru/api.php', {
   query: {
     imdb: imdbId,
-    type: 'movie'
+    type: 'movie',
   },
   headers: {
     Referer: `https://brightpathsignals.com/embed/movie/${imdbId}`,
@@ -20,10 +20,7 @@ const h = await ofetch(streams[3], {
   },
 })
 
-console.log(
-  await h.text()
-)
-
+console.log(await h.text())
 
 /*
 import fetch from "node-fetch";

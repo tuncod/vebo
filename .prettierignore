@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+static
+assets
+
+# optional if needed
+coverage
+
+# if you ever have generated files
+*.min.js
+*.min.css

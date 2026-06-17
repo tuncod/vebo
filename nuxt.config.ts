@@ -1,4 +1,4 @@
-import tailwindcss from "@tailwindcss/vite"
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -8,10 +8,10 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: 'https://unpkg.com/eruda'
+          src: 'https://unpkg.com/eruda',
         },
         {
-          textContent: 'eruda.init();'
+          textContent: 'eruda.init();',
         },
       ],
       link: [
@@ -31,24 +31,16 @@ export default defineNuxtConfig({
       ],
     },
 
-  keepalive: true,
+    keepalive: true,
   },
 
   css: ['./app/assets/css/main.css'],
 
   vite: {
-    plugins: [
-      tailwindcss(),
-    ],
+    plugins: [tailwindcss()],
   },
 
-  modules: [
-    '@vueuse/nuxt',
-    '@pinia/nuxt',
-    '@vite-pwa/nuxt',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@vueuse/nuxt', '@pinia/nuxt', '@vite-pwa/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n'],
 
   colorMode: {
     preference: 'light', // default value of $colorMode.preference
@@ -61,7 +53,8 @@ export default defineNuxtConfig({
     locales: [
       { code: 'ar', name: 'Arabic', file: 'ar.json', dir: 'rtl' },
       { code: 'en', name: 'English', file: 'en.json' },
-    ]
+    ],
+    restructureDir: 'app',
   },
 
   pwa: {
@@ -96,8 +89,8 @@ export default defineNuxtConfig({
         params: {
           title: 'title',
           text: 'text',
-          url: 'url'
-        }
+          url: 'url',
+        },
       },
     },
     client: {
@@ -111,36 +104,36 @@ export default defineNuxtConfig({
     },
     workbox: {
       globPatterns: ['**/*'],
-    runtimeCaching: [
-      {
-        urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'google-fonts-cache',
-          expiration: {
-            maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'google-fonts-cache',
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+            },
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
           },
-          cacheableResponse: {
-            statuses: [0, 200]
-          }
-        }
-      },
-      {
-        urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
-        handler: 'CacheFirst',
-        options: {
-          cacheName: 'gstatic-fonts-cache',
-          expiration: {
-            maxEntries: 10,
-            maxAgeSeconds: 60 * 60 * 24 * 365 // <== 365 days
+        },
+        {
+          urlPattern: /^https:\/\/fonts\.gstatic\.com\/.*/i,
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'gstatic-fonts-cache',
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 60 * 60 * 24 * 365, // <== 365 days
+            },
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
           },
-          cacheableResponse: {
-            statuses: [0, 200]
-          },
-        }
-      }
-    ],
+        },
+      ],
     },
   },
 })
