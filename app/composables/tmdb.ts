@@ -24,7 +24,7 @@ class TMDB extends BaseTMDB {
 export const useTMDB = () => {
   const timezoneStore = useTimezoneStore()
 
-  const tmdb = new TMDB('demo-key', {
+  const options = {
     language: 'en-US', // 'ar-SA',
     timezone: timezoneStore.timezone,
     images: {
@@ -34,10 +34,13 @@ export const useTMDB = () => {
     logger: (entry) => {
       // console.log(`[${entry.type}] ${entry.method} ${entry.endpoint}`);
       // console.log(entry)
-      console.log(useTimezoneStore)
-      console.log(timezoneStore.timezone)
+      console.log(entry)
     },
-  })
+  }
+
+  console.log(options)
+
+  const tmdb = new TMDB('demo-key', options)
 
   return tmdb
 }
