@@ -1,5 +1,6 @@
 import { ofetch } from 'ofetch'
 import { TMDB as BaseTMDB } from '@lorenzopant/tmdb'
+import type { TMDBOptions } from '@lorenzopant/tmdb/types'
 // import { useTimezoneStore } from '~/stores/timezone'
 
 const TMDB_API_BASE = 'https://vebo-eta.vercel.app/api/external' // https://api.themoviedb.org/3
@@ -15,9 +16,9 @@ export const useTMDBFetch = async (url: string, options) => {
 }
 
 class TMDB extends BaseTMDB {
-  constructor(accessToken: string, options = {}) {
+  constructor(accessToken: string, options: TMDBOptions = {}) {
     super(accessToken, options)
-    this.client.baseUrl = '/api/external' // TMDB_API_BASE
+    this.client.baseUrl = TMDB_API_BASE
   }
 }
 
