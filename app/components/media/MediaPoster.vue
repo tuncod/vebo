@@ -58,7 +58,7 @@ onMounted(() => {
       </div>
 
       <!-- Loaded -->
-      <img class="poster" v-else :src="posterSrc" alt="movie.title" loading="lazy" decoding="async" />
+      <img class="poster h-full w-full object-cover border-0" v-else :src="posterSrc" alt="movie.title" loading="lazy" decoding="async" />
     </div>
   </div>
 </template>
