@@ -2,12 +2,12 @@
 const { items, title } = defineProps(['items', 'title'])
 </script>
 <template>
-  <section class="section">
-    <div class="section-header">
-      <h2>{{ title }}</h2>
+  <section class="section w-full">
+    <div class="section-header w-full">
+      <h3 class="text-xl mt-10 mb-2">{{ title }}</h3>
     </div>
 
-    <div class="scroll-row">
+    <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-2 -mx-3 px-2" id="selection" style="scroll-snap-type: x mandatory;">
       <MediaCard v-for="item in items" :poster="item.poster_path" />
     </div>
   </section>
