@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
 
   routeRules: {
-    '/': { prerender: true },
+    //  '/': { prerender: true },
   },
 
   app: {
