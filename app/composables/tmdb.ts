@@ -17,7 +17,7 @@ export const useTMDBFetch = async (url: string, options) => {
 class TMDB extends BaseTMDB {
   constructor(accessToken: string, options = {}) {
     super(accessToken, options)
-    this.client.baseUrl = TMDB_API_BASE
+    this.client.baseUrl = '/api/external' // TMDB_API_BASE
   }
 }
 
