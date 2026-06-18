@@ -1,20 +1,21 @@
+/*
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Brand */
+  * Brand *
   --color-primary: #e31221;
   --color-primary-hover: #b00d19;
 
-  /* Layout */
+  * Layout *
   --spacing-sidebar: 240px;
   --spacing-header: 60px;
 
-  /* Shadows */
+  * Shadows *
   --shadow-card: 0 4px 24px rgb(0 0 0 / 0.08);
 
-  /* Animation */
+  * Animation *
   --ease-fluid: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.45, 0, 0.55, 1);
 
@@ -53,8 +54,6 @@
   }
 }
 
-
-/*
 @import '@fontsource/noto-sans/200.css';
 @import '@fontsource/noto-sans/300.css';
 @import '@fontsource/noto-sans/400.css';

@@ -81,3 +81,7 @@ const themeToggle = () => {
     </main>
   </div>
 </template>
+
+<style>
+@use "~/assets/css/main_default.css";
+</style>

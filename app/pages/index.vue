@@ -5,7 +5,8 @@ const layout = ref('default')
 
 onMounted(() => {
   setInterval(() => {
-    setPageLayout(layout.value === 'default' ? 'appdemo' : 'default')
+    layout.value = layout.value === 'default' ? 'appdemo' : 'default'
+    setPageLayout(layout.value)
   }, 5000)
 })
 </script>
