@@ -1,6 +1,5 @@
 <template>
-  <NuxtPwaManifest />
-  <main class="main-content" role="main" aria-live="polite">
+  <main class="" role="main" aria-live="polite">
     <slot />
   </main>
 </template>

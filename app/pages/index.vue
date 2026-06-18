@@ -1,5 +1,13 @@
 <script setup lang="ts">
 const movies = await useTMDB().trending.movies({ time_window: 'week' })
+
+const layout = ref('default')
+
+onMounted(() => {
+  setInterval(() => {
+    setPageLayout(layout.value === 'default' ? 'appdemo' : 'default')
+  }, 5000)
+})
 </script>
 <template>
   <div>
