@@ -2,7 +2,7 @@
 const { items, title } = defineProps(['items', 'title'])
 </script>
 <template>
-  <section class="section w-full">
+  <section class="section w-full px-3">
     <div class="section-header w-full">
       <h3 class="text-xl mt-10 mb-2">{{ title }}</h3>
     </div>
