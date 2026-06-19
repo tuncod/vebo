@@ -62,7 +62,7 @@ export default defineNuxtConfig({
     restructureDir: 'app',
   },
 
-  pwa: {
+  pwba: {
     registerType: 'autoUpdate',
     manifest: {
       name: 'Vebo',
