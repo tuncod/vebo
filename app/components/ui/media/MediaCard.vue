@@ -7,7 +7,7 @@ const { poster, title } = defineProps(['poster', 'title'])
             <UiMediaPoster :src="poster" />
             <div class="absolute py-1 px-2 left-0 right-0 bottom-0" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 25%, transparent 100%);">
               <div class="text-white text-sm">{{ title }}</div>
-              <div class="text-zinc-300 text-xs mb-2">2026 • Drama</div>
+              <div class="text-zinc-300 text-xs mb-2">2026 • {{ score }}/10</div>
             </div>
           </div>
           <div class="py-1">
