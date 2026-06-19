@@ -1,4 +1,3 @@
-<!-- components/MovieCard.vue -->
 <script setup>
 import { useIntersectionObserver, useImage, useNetwork } from '@vueuse/core'
 
@@ -42,9 +41,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="movie-card" ref="cardEl">
-    <!-- Poster -->
-    <div class="poster-wrapper">
+  <div class="poster-wrapper relative aspect-[2/3]" ref="cardEl">
+
       <!-- Not visible yet → skeleton -->
       <div class="skeleton" v-if="!visible" />
 
@@ -59,72 +57,6 @@ onMounted(() => {
 
       <!-- Loaded -->
       <img class="poster h-full w-full object-cover border-0" v-else :src="posterSrc" alt="movie.title" loading="lazy" decoding="async" />
-    </div>
+
   </div>
 </template>
-
-<style scoped>
-.movie-card {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.poster-wrapper {
-  position: relative;
-  aspect-ratio: 2 / 3;
-  background: #1a1a2e;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.poster {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.skeleton {
-  width: 100%;
-  height: 100%;
-  background: #2a2a3e;
-}
-
-.shimmer {
-  background: linear-gradient(90deg, #2a2a3e 25%, #3a3a5e 50%, #2a2a3e 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
-.poster-error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 0.75rem;
-  color: #888;
-  padding: 1rem;
-  text-align: center;
-}
-
-.info h3 {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.info p {
-  font-size: 0.75rem;
-  color: #888;
-  margin: 0;
-}
-</style>

@@ -9,9 +9,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div>
-    <h1 class="text-4xl text-red-600 mt-26" @click="refresh">{{ $t('index') }}</h1>
-
-    <MediaScroll :items="movies.results" title="Popular — شائع" />
+  <div class="py-5 px-3">
+    <UiMediaScroll :items="movies.results" title="Popular — شائع" />
   </div>
 </template>
