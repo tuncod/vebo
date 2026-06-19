@@ -52,6 +52,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    locale: 'ar',
     defaultLocale: 'ar',
     strategy: 'no_prefix',
     locales: [
