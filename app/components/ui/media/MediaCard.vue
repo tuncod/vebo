@@ -1,5 +1,5 @@
 <script setup>
-const { poster, title } = defineProps(['poster', 'title'])
+const { poster, title, score } = defineProps(['poster', 'title', 'score'])
 </script>
 <template>
         <div class="card relative w-[130px] h-auto shrink-0 hover:scale-90 active:scale-95 transition">
