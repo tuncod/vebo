@@ -10,7 +10,7 @@ const { poster, title, score } = defineProps(['poster', 'title', 'score'])
               <div class="text-zinc-300 text-xs mb-2">2026 • {{ score }}/10</div>
             </div>
           </div>
-          <div class="py-1">
+          <div class="py-1 hidden">
               <div class="text-zinc-800 dark:text-zinc-300 text-sm text-nowrap">{{ title }}</div>
               <div class="text-zinc-600 dark:text-zinc-500 text-xs mb-2">2026 • Drama</div>
             </div>
