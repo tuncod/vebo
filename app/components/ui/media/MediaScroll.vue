@@ -13,9 +13,9 @@ const props = defineProps({
 </script>
 <template>
   <section class="section w-full">
-    <div v-if="props.title" class="section-header flex w-full justify-center items-center">
+    <div v-if="props.title" class="section-header flex w-full justify-between items-center">
       <h3 class="text-xl my-2">{{ props.title }}</h3>
-      <NuxtLink to="/">View All</NuxtLink>
+      <NuxtLink to="/" class="text-sm text-red-400">View All</NuxtLink>
     </div>
 
     <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-2 my-3 -mx-3 px-3 no-scrollbar" id="selection" style="scroll-snap-type: x mandatory;">
