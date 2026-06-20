@@ -31,7 +31,7 @@ const year = computed(() => props.year.split("-")[0])
             <UiMediaPoster :src="props.poster" />
             <div class="absolute py-1 px-2 left-0 right-0 bottom-0" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 25%, transparent 100%);">
               <div v-if="props.title" class="text-white text-sm text-shadow-md">{{ props.title }}</div>
-              <div class="text-zinc-300 text-xs mb-2 text-shadow-md [&>*:not(:last-child)]:after:content-['•'] [&>*:not(:last-child)]:after:mx-2">
+              <div class="text-zinc-300 text-xs mb-2 text-shadow-md [&>*:not(:last-child)]:after:content-['•'] [&>*:not(:last-child)]:after:mx-1.5">
                 <span v-if="props.year">{{ year }}</span>
                 <span v-if="props.score !== undefined && props.score !== null">{{ score }}/10</span>
               </div>
