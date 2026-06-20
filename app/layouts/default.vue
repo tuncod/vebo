@@ -6,7 +6,7 @@
 
 <template>
   <NuxtLoadingIndicator />
-  <main class="w-full min-h-screen bg-white dark:bg-[#111] select-none" role="main" aria-live="polite">
+  <main class="font-noto-sans w-full min-h-screen bg-white dark:bg-[#111] select-none" role="main" aria-live="polite">
     <slot />
   </main>
 </template>
