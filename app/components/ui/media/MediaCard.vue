@@ -34,7 +34,7 @@ const year = computed(() => props.year.split("-")[0])
               <div class="text-zinc-300 text-xs mb-2 text-shadow-md">
                 <span v-if="props.year">{{ year }}</span>
                 <span v-if="props.year && props.score"> • </span>
-                <span v-if="props.score">{{ score }}/10</span>
+                <span v-if="props.score !== undefined && props.score !== null">{{ score }}/10</span>
               </div>
             </div>
           </div>
