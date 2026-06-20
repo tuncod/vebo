@@ -20,6 +20,7 @@ const props = defineProps({
     <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-2 my-3 -mx-3 px-3 no-scrollbar" id="selection" style="scroll-snap-type: x mandatory;">
       <!-- <UiMediaCard v-for="item in items" :poster="item.poster_path" :title="item.original_title" :score="item.vote_average" :year="item.release_date" /> -->
       <!-- <slot /> -->
+      j
       <slot v-for="item in items" :key="item.id" v-bind="item" />
     </div>
   </section>
