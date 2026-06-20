@@ -11,7 +11,9 @@ onMounted(() => {
 <template>
   <div class="py-5 px-3">
     <UiMediaScroll :items="movies.results" title="Popular">
-      <UiMediaCard v-for="item in movies.results" :poster="item.poster_path" :title="item.original_title" :score="item.vote_average" :year="item.release_date" />
+      <template #item="{ poster_path, original_title, vote_average, release_date }">
+        <UiMediaCard :poster="poster_path" :title="original_title" :score="vote_average" :year="release_date" />
+      </template>
     </UiMediaScroll>
   </div>
 </template>
