@@ -18,7 +18,7 @@ const props = defineProps({
       <NuxtLink to="/" class="text-xs text-red-500">View All</NuxtLink>
     </div>
 
-    <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-2 my-3 -mx-3 px-3 snap-x snap-mandatory no-scrollbar" id="selection">
+    <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-3 my-3 -mx-3 px-3 snap-x snap-mandatory no-scrollbar" id="selection">
       <slot v-for="item in items" :key="item.id" name="item" v-bind="item" />
     </div>
   </section>
