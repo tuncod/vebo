@@ -5,7 +5,7 @@ const score = computed(() => Number(props.score).toFixed())
 const year = computed(() => props.year.split("-")[0])
 </script>
 <template>
-        <NuxtLink to="/" class="card relative w-[130px] h-auto shrink-0 hover:scale-90 active:scale-95 transition">
+        <NuxtLink :to="'/?title=' + props.title" class="card relative w-[130px] h-auto shrink-0 hover:scale-90 active:scale-95 transition">
           <div class="relative aspect-[2/3] overflow-hidden rounded-xl bg-slate-100 dark:bg-zinc-800">
             <UiMediaPoster :src="props.poster" />
             <div class="absolute py-1 px-2 left-0 right-0 bottom-0" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 25%, transparent 100%);">
