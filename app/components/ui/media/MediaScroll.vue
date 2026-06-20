@@ -15,12 +15,10 @@ const props = defineProps({
   <section class="section w-full">
     <div v-if="props.title" class="section-header flex w-full justify-between items-center">
       <h3 class="text-xl my-2">{{ props.title }}</h3>
-      <NuxtLink to="/" class="text-sm text-red-400">View All</NuxtLink>
+      <NuxtLink to="/" class="text-xs text-red-500">View All</NuxtLink>
     </div>
 
-    <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-2 my-3 -mx-3 px-3 no-scrollbar" id="selection" style="scroll-snap-type: x mandatory;">
-      <!-- <UiMediaCard v-for="item in items" :poster="item.poster_path" :title="item.original_title" :score="item.vote_average" :year="item.release_date" /> -->
-      <!-- <slot /> -->
+    <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-2 my-3 -mx-3 px-3 snap-x snap-mandatory no-scrollbar" id="selection">
       <slot v-for="item in items" :key="item.id" name="item" v-bind="item" />
     </div>
   </section>
