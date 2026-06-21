@@ -13,4 +13,17 @@
 
   --font-body: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
   --font-heading: 'Montserrat', 'Tajawal', sans-serif;
+
+  --color-spring: oklch(88.243% 0.19919 160.14);
+  --color-spring-50: oklch(97.679% 0.03248 170.05);
+  --color-spring-100: oklch(95.876% 0.05921 169.6);
+  --color-spring-200: oklch(92.803% 0.10872 167.72);
+  --color-spring-300: oklch(90.587% 0.14897 164.89);
+  --color-spring-400: oklch(89.162% 0.17825 162.19);
+  --color-spring-500: oklch(88.368% 0.19765 159.46);
+  --color-spring-600: oklch(87.988% 0.21002 156.86);
+  --color-spring-700: oklch(79.261% 0.1883 157.12);
+  --color-spring-800: oklch(67.778% 0.16019 157.41);
+  --color-spring-900: oklch(54.599% 0.1284 157.69);
+  --color-spring-950: oklch(47.116% 0.10955 158.35);
 }
