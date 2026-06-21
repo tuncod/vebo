@@ -56,12 +56,12 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    locale: 'ar',
-    defaultLocale: 'ar',
+    locale: 'ar-TN',
+    defaultLocale: 'ar-TN',
     strategy: 'no_prefix',
     locales: [
-      { code: 'ar', name: 'Arabic', file: 'ar.json', dir: 'rtl' },
-      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'ar-TN', name: 'Arabic', file: 'ar.json', dir: 'rtl' },
+      { code: 'en-US', name: 'English', file: 'en.json' },
     ],
     restructureDir: 'app',
   },
