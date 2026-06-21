@@ -5,7 +5,56 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
 
   routeRules: {
-    //  '/': { prerender: true },
+    /*
+    '/': { prerender: true },
+    '/search': { prerender: true },
+    '/settings': {
+      prerender: true,
+      robots: false
+    },
+    '/about/**': { prerender: true },
+    '/details/**': { swr: 3600 },
+    '/tv/**': { swr: 21600 },
+    '/keyword/**': { swr: 21600 },
+    '/network/**': { swr: 86400 },
+    '/season/**': { swr: 86400 },
+    '/episode/**': { swr: 86400 },
+    '/collection/**': { swr: 86400 },
+    '/genre/**': { swr: 21600 },
+    '/discover/**': { swr: 1800 },
+    '/person/**': { swr: 86400 },
+    '/company/**': { swr: 86400 },
+    '/profile/**': {
+      ssr: false,
+      robots: false
+    },
+    '/favorites': {
+      ssr: false,
+      robots: false
+    },
+    '/watchlist': {
+      ssr: false,
+      robots: false
+    },
+    '/auth/**': {
+      prerender: true,
+      robots: false,
+    },
+    '/api/**': {
+      robots: false
+    },
+    '/api/trending/**': { swr: 1800 },
+    '/api/details/**': { swr: 3600 },
+    '/api/person/**': { swr: 86400 },
+    '/api/discover/**': { swr: 1800 },
+    '/api/tmdb/**': { swr: 3600 },
+    '/images/tmdb/posters/**': {
+      headers: {
+        'cache-control': 'public,max-age=31536000'
+      },
+      proxy: 'https://image.tmdb.org/t/p/**'
+    },
+    */
   },
 
   app: {
@@ -39,7 +88,7 @@ export default defineNuxtConfig({
       ],
     },
 
-    keepalive: true,
+    // keepalive: true,
   },
 
   css: ['./app/assets/css/main.css'],
