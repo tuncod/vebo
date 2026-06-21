@@ -3,7 +3,11 @@ const { data: movies } = await useAsyncData('trending_movies_week', () => useTMD
 const { data: shows } = await useAsyncData('trending_shows_week', () => useTMDB().trending.tv({ time_window: 'week' }))
 
 const fullscreen = () => {
-  document.documentElement.requestFullscreen()
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen()
+  } else {
+    document.documentElement.exitFullscreen()
+  }
 }
 
 onMounted(() => {
