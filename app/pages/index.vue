@@ -25,9 +25,9 @@ onMounted(() => {
     </UiMediaScroll>
   </div>
   <div class="px-3">
-    <UiMediaScroll :items="shows.results" title="Popular">
-      <template #item="{ name }">
-        {{ name }}
+    <UiMediaScroll :items="shows.results" title="This Week's Trending TV Shows">
+      <template #item="{ poster_path, original_name, vote_average, first_air_date }">
+        <UiMediaCard :poster="poster_path" :title="original_name" :score="vote_average" :year="first_air_date" />
       </template>
     </UiMediaScroll>
   </div>
