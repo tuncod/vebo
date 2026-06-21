@@ -43,4 +43,6 @@ onMounted(() => {
       </template>
     </UiMediaScroll>
   </div>
+  <div class="w-full h-14"></div>
+  <div class="w-full h-14 fixed bottom-0 left-0 right-0 bg-white/10 backdrop-filter backdrop-blur-lg bg-opacity-30 border-t border-zinc-200 z-20"></div>
 </template>
