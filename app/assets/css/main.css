@@ -9,4 +9,8 @@
 @theme {
   --font-noto-sans: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
   --font-montserrat: 'Montserrat', sans-serif;
+  --font-tajawal: 'Tajawal', sans-serif;
+
+  --font-body: 'Noto Sans', 'Noto Sans Arabic', sans-serif;
+  --font-heading: 'Montserrat', 'Tajawal', sans-serif;
 }
