@@ -18,7 +18,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="relative w-full p-2 p-0 my-8">
+  <div class="relative w-full p-2 p-0 mb-8">
     <img class="w-full aspect-square object-cover object-center rounded-[12vw] hidden" src="https://image.tmdb.org/t/p/original/sYsaVy047cfGTLMfcRihee3ShnM.jpg" />
     <div class="w-full aspect-square mask-b-from-45% mashk-radial-[50%_90%] mask-radial-from-70% bg-[url(https://image.tmdb.org/t/p/original/sYsaVy047cfGTLMfcRihee3ShnM.jpg)] bg-cover bg-center bg-fixed hidden"></div>
     <div class="w-full aspect-square bg-[url(https://image.tmdb.org/t/p/original/sYsaVy047cfGTLMfcRihee3ShnM.jpg)] bg-cover bg-contain bg-center bg-fixed rounded-[12vw]"></div>
