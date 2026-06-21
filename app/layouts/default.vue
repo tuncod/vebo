@@ -1,7 +1,16 @@
 <script setup lang="ts">
-  onMounted(() => {
-    document.addEventListener('contextmenu', (e) => e.preventDefault())
-  })
+const { localeProperties } = useI18n()
+
+useHead({
+  htmlAttrs: {
+    dir: localeProperties.value.dir || 'ltr',
+    lang: localeProperties.value.code
+  }
+})
+
+onMounted(() => {
+  document.addEventListener('contextmenu', (e) => e.preventDefault())
+})
 </script>
 
 <template>
