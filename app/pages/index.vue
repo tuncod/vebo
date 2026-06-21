@@ -14,7 +14,7 @@ onMounted(() => {
 </script>
 <template>
   <div class="font-heading px-3">
-    <h1 class="text-5xl font-black my-8" @click="fullscreen">Home</h1>
+    <h1 class="text-5xl font-black my-8" @click="fullscreen">{{ $('pages.home') }}</h1>
   </div>
   <div class="px-3">
     <UiMediaScroll :items="movies.results" title="Popular">
