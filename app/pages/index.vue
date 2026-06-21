@@ -18,7 +18,15 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="font-heading px-3">
+  <div class="relative w-full p-2 p-0 my-8">
+    <img class="w-full aspect-square object-cover object-center rounded-[12vw] hidden" src="https://image.tmdb.org/t/p/original/sYsaVy047cfGTLMfcRihee3ShnM.jpg" />
+    <div class="w-full aspect-square mask-b-from-45% mashk-radial-[50%_90%] mask-radial-from-70% bg-[url(https://image.tmdb.org/t/p/original/sYsaVy047cfGTLMfcRihee3ShnM.jpg)] bg-cover bg-center bg-fixed hidden"></div>
+    <div class="w-full aspect-square bg-[url(https://image.tmdb.org/t/p/original/sYsaVy047cfGTLMfcRihee3ShnM.jpg)] bg-cover bg-contain bg-center bg-fixed rounded-[12vw]"></div>
+    <div class="absolute bottom-0">
+      <h1 class="font-heading text-white text-3xl font-black ml-4 mb-14">Spider-Man</h1>
+    </div>
+  </div>
+  <div class="font-heading px-3 hidden">
     <h1 class="text-5xl font-black my-8" @click="fullscreen">{{ $t('pages.home') }}</h1>
   </div>
   <div class="px-3">
