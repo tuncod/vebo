@@ -25,8 +25,10 @@ class TMDB extends BaseTMDB {
 export const useTMDB = () => {
   const timezoneStore = useTimezoneStore()
 
+  const { localeProperties } = useI18n()
+
   const options = {
-    language: 'en-US', // 'ar-SA',
+    language: localeProperties.lang, // 'en-US', // 'ar-SA',
     timezone: timezoneStore.timezone,
     images: {
       secure_images_url: true,
