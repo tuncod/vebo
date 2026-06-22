@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RiHomeFill } from '@remixicon/vue'
+import { House } from '@lucide/vue'
 
 const { localeProperties } = useI18n()
 
@@ -16,7 +17,7 @@ useHead({
 const navbar = [
   {
     key: 'home',
-    icon: RiHomeFill,
+    icon: House,
     path: '/',
   },
   {
