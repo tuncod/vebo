@@ -54,10 +54,13 @@ onMounted(() => {
     </main>
     <div class="w-full h-16"></div>
     <div
-      class="flex justify-between items-center w-full h-16 fixed bottom-0 left-0 right-0 bg-white/40 backdrop-filter backdrop-blur-lg border-t border-zinc-200/40 z-20 lg:hidden"
+      class="flex justify-between items-center w-full h-16 px-4 fixed bottom-0 left-0 right-0 bg-white/40 backdrop-filter backdrop-blur-lg border-t border-zinc-200/40 z-20 lg:hidden"
     >
       <NuxtLink class="" v-for="item in navbar" :to="item.path">
-        <span><component :is="item.icon" class="size-4" /></span>
+        <div class="flex flex-col justify-center items-center w-full shrink-0">
+          <component :is="item.icon" class="size-8" />
+          <span class="text-sm">{{ $t(item.key) }}</span>
+        </div>
       </NuxtLink>
     </div>
   </div>
