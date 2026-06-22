@@ -29,7 +29,7 @@ export const useTMDB = () => {
 
   const options = {
     language: localeProperties.value.code, // 'en-US', // 'ar-SA',
-    timezone: timezone,
+    // timezone: timezone,
     images: {
       secure_images_url: true,
       autocomplete_paths: true,
