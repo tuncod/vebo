@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const { data: movies } = await useAsyncData('trending_movies_week', () => useTMDB().trending.movies({ time_window: 'week' }))
-const { data: shows } = await useAsyncData('trending_shows_week', () => useTMDB().trending.tv({ time_window: 'week' }))
+const { data: moviesData } = await useAsyncData('trending_movies_week', () => useTMDB().trending.movies({ time_window: 'week' }))
+const { data: showsData } = await useAsyncData('trending_shows_week', () => useTMDB().trending.tv({ time_window: 'week' }))
+
+const movies = ref({ results: [] })
+const shows = ref({ results: [] })
 
 const fullscreen = () => {
   if (!document.fullscreenElement) {
@@ -11,6 +14,8 @@ const fullscreen = () => {
 }
 
 onMounted(() => {
+  console.log(moviesData)
+  console.log(showsData)
   const layout = window.localStorage.getItem('app_layout')
   if (layout) {
     setPageLayout(layout)
