@@ -28,7 +28,7 @@ export const useTMDB = () => {
   const { localeProperties } = useI18n()
 
   const options = {
-    language: localeProperties.value?.code || 'en-US', // 'en-US', // 'ar-SA',
+    language: localeProperties?.value?.code || 'en-US', // 'en-US', // 'ar-SA',
     // timezone: timezone,
     images: {
       secure_images_url: true,
@@ -40,10 +40,6 @@ export const useTMDB = () => {
       console.log(entry)
     },
   }
-
-  console.log(timezoneStore)
-  console.log(timezone)
-  console.log(options)
 
   const tmdb = new TMDB('demo-key', options)
 
