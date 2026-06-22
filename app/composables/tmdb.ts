@@ -41,6 +41,7 @@ export const useTMDB = () => {
     },
   }
 
+  console.log(localeProperties)
   console.log(options)
 
   const tmdb = new TMDB('demo-key', options)
