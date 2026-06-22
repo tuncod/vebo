@@ -1,9 +1,11 @@
 <script setup lang="ts">
-const { data: moviesData } = await useAsyncData('trending_movies_week', () => useTMDB().trending.movies({ time_window: 'week' }))
-const { data: showsData } = await useAsyncData('trending_shows_week', () => useTMDB().trending.tv({ time_window: 'week' }))
+const { data: movies } = await useAsyncData('trending_movies_week', () => useTMDB().trending.movies({ time_window: 'week' }))
+const { data: shows } = await useAsyncData('trending_shows_week', () => useTMDB().trending.tv({ time_window: 'week' }))
 
+/*
 const movies = ref({ results: [] })
 const shows = ref({ results: [] })
+*/
 
 const fullscreen = () => {
   if (!document.fullscreenElement) {
