@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { RiHomeFill } from '@remixicon/vue'
+
 const { localeProperties } = useI18n()
 
 const dir = computed(() => localeProperties.value.dir || 'ltr')
@@ -14,27 +16,27 @@ useHead({
 const navbar = [
   {
     key: 'home',
-    icon: 'home',
+    icon: RiHomeFill,
     path: '/',
   },
   {
     key: 'discover',
-    icon: 'earth',
+    icon: RiHomeFill,
     path: '/discover',
   },
   {
     key: 'watchlist',
-    icon: 'heart',
+    icon: RiHomeFill,
     path: '/watchlist',
   },
   {
     key: 'settings',
-    icon: 'settings',
+    icon: RiHomeFill,
     path: '/settings',
   },
   {
     key: 'auth',
-    icon: 'user',
+    icon: RiHomeFill,
     path: '/auth',
   },
 ]
@@ -55,7 +57,7 @@ onMounted(() => {
       class="flex justify-between items-center w-full h-16 fixed bottom-0 left-0 right-0 bg-white/40 backdrop-filter backdrop-blur-lg border-t border-zinc-200/40 z-20 lg:hidden"
     >
       <NuxtLink class="" v-for="item in navbar" :to="item.path">
-        <span>{{ $t(item.key) }}</span>
+        <span><component :is="item.icon" size="28px" /></span>
       </NuxtLink>
     </div>
   </div>
