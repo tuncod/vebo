@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const props = defineProps({
   title: {
     type: String,
@@ -13,13 +12,13 @@ const props = defineProps({
 </script>
 <template>
   <section class="section w-full">
-    <div v-if="props.title" class="section-header flex w-full justify-between items-center">
+    <div class="section-header flex w-full justify-between items-center" v-if="props.title">
       <h3 class="text-xl my-2">{{ props.title }}</h3>
-      <NuxtLink to="/" class="text-xs text-spring-600">View All</NuxtLink>
+      <NuxtLink class="text-xs text-spring-600" to="/">View All</NuxtLink>
     </div>
 
     <div class="scroll-row flex w-[calc(100%_+_var(--spacing) * -3)] overflow-x-auto gap-3 my-3 -mx-3 px-3 snap-x snap-mandatory no-scrollbar" id="selection">
-      <slot v-for="item in items" :key="item.id" name="item" v-bind="item" />
+      <slot v-for="item in items" v-bind="item" :key="item.id" name="item" />
     </div>
   </section>
 </template>

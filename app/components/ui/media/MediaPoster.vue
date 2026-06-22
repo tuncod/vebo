@@ -42,21 +42,19 @@ onMounted(() => {
 
 <template>
   <div class="poster-wrapper relative aspect-[2/3]" ref="cardEl">
+    <!-- Not visible yet → skeleton -->
+    <div class="skeleton" v-if="!visible" />
 
-      <!-- Not visible yet → skeleton -->
-      <div class="skeleton" v-if="!visible" />
+    <!-- Visible + loading → shimmer -->
+    <div class="skeleton shimmer" v-else-if="isLoading" />
 
-      <!-- Visible + loading → shimmer -->
-      <div class="skeleton shimmer" v-else-if="isLoading" />
+    <!-- Error state -->
+    <div class="poster-error" v-else-if="error">
+      <span v-if="!isOnline">📡 Offline — retrying when back online…</span>
+      <span v-else>Failed to load poster {{ error.value }} {{ posterSrc }}</span>
+    </div>
 
-      <!-- Error state -->
-      <div class="poster-error" v-else-if="error">
-        <span v-if="!isOnline">📡 Offline — retrying when back online…</span>
-        <span v-else>Failed to load poster {{ error.value }} {{ posterSrc }}</span>
-      </div>
-
-      <!-- Loaded -->
-      <img class="poster h-full w-full object-cover border-0" v-else :src="posterSrc" alt="movie.title" loading="lazy" decoding="async" />
-
+    <!-- Loaded -->
+    <img class="poster h-full w-full object-cover border-0" v-else :src="posterSrc" alt="movie.title" loading="lazy" decoding="async" />
   </div>
 </template>
