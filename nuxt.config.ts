@@ -97,7 +97,7 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
-  modules: ['@vueuse/nuxt', '@pinia/nuxt', '@vite-pwa/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n'],
+  modules: ['@vueuse/nuxt', '@pinia/nuxt', '@vite-pwa/nuxt', '@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/ui', 'shadcn-nuxt'],
 
   colorMode: {
     preference: 'light', // default value of $colorMode.preference
@@ -113,6 +113,21 @@ export default defineNuxtConfig({
       { code: 'en-US', name: 'English', file: 'en.json' },
     ],
     restructureDir: 'app',
+  },
+
+  shadcn: {
+    /**
+     * Prefix for all the imported component.
+     * @default "Ui"
+     */
+    prefix: 'Sh',
+    /**
+     * Directory that the component lives in.
+     * Will respect the Nuxt aliases.
+     * @link https://nuxt.com/docs/api/nuxt-config#alias
+     * @default "@/components/ui"
+     */
+    componentDir: '@/components/sh'
   },
 
   pwba: {
