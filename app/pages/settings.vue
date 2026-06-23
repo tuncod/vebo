@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ar, en } from '@nuxt/ui/locale'
-
-const { setLocale, locale, locales } = useI18n()
+const { setLocale, locale } = useI18n()
 const colorMode = useColorMode()
 
 const availableLanguages = [
@@ -14,8 +12,7 @@ const availableLanguages = [
     name: 'العربية',
     code: 'ar-TN',
     dir: 'rtl',
-  },
-  ar, en,
+  }
 ]
 
 const language = computed({
@@ -31,26 +28,22 @@ const isDark = computed({
     colorMode.preference = value ? 'dark' : 'light'
   }
 })
-
-onMounted(() => {
-  console.log(ar)
-  console.log(locales)
-  console.log(availableLanguages)
-})
 </script>
 <template>
   <div class="px-3 flex-col">
+  
+    <div class="font-heading">
+      <h1 class="text-5xl font-black my-8">Settings</h1>
+    </div>
 
-    <h1 class="text-4xl text-zinc-950 mt-26">settings</h1>
-
-    <div class="mb-12">
-      <h3 class="mb-2 text-xl text-zinc-950 font-bold">Appearance</h3>
+    <div class="">
+      <h3 class="mb-2 text-xl text-zinc-700 dark:text-zinc-200 font-bold">Appearance</h3>
 
       <div class="px-2">
-        <div class="flex flex-row items-center p-4 rounded-t-xl bg-zinc-50">
+        <div class="flex flex-row items-center p-4 rounded-t-xl bg-zinc-50 dark:bg-zinc-900">
           <div class="w-full flex flex-col">
-            <span class="text-base text-zinc-900 font-bold mb-1">Language</span>
-            <span class="text-xs text-zinc-600">Change Language You Want</span>
+            <span class="text-base text-zinc-900 dark:text-zinc-100 font-bold mb-1">Language</span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-400">Change Language You Want</span>
           </div>
           <div>
             <ULocaleSelect :model-value="language"
@@ -60,8 +53,8 @@ onMounted(() => {
         </div>
         <div class="flex flex-row items-center p-4 rounded-b-xl bg-zinc-50">
           <div class="w-full flex flex-col">
-            <span class="text-base text-zinc-900 font-bold mb-1">Theme</span>
-            <span class="text-xs text-zinc-600">Change theme You Want</span>
+            <span class="text-base text-zinc-900 dark:text-zinc-100 font-bold mb-1">Theme</span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-400">Change theme You Want</span>
           </div>
           <div>
             <UColorModeSwitch size="xl" color="neutral" />
@@ -69,46 +62,6 @@ onMounted(() => {
         </div>
       </div>
 
-    </div>
-
-    <div class="max-w-sm mx-auto">
-      <label for="languages" class="block mb-2.5 text-sm font-medium text-heading">Select an option</label>
-      <select v-model="language" id="languages" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:text-body">
-        <option selected>Choose a language</option>
-        <option v-for="item in locales" :key="item.code" :value="item.code">
-            {{ item.name }}
-        </option>
-      </select>
-    </div>
-
-    <div class="max-w-sm mx-auto">
-      <label class="w-80 inline-flex cursor-pointer p-4 bg-neutral-primary-soft border border-default rounded-base shadow-xs">
-        <input type="checkbox" v-model="isDark" class="sr-only peer">
-        <div class="shrink-0 relative w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand"></div>
-        <div class="ms-2.5 select-none">
-          <p class="text-sm font-medium text-heading mb-1">Weekly newsletter</p>
-          <p class="text-sm font-normal text-body">Save my credentials for easier sign-in in the future.</p>
-        </div>
-      </label>
-    </div>
-
-    <div class="w-full flex">
-      <div class="w-full">
-        <span>Change language</span>
-      </div>
-      <div class="">
-        <ULocaleSelect :model-value="locale"
-          :locales="Object.values({})"
-          @update:model-value="setLocale($event)" />
-      </div>
-    </div>
-    <div class="w-full flex">
-      <div class="w-full">
-        <span>Change Color mode</span>
-      </div>
-      <div class="">
-        <UColorModeSwitch size="xl" color="neutral" />
-      </div>
     </div>
 
   </div> 
