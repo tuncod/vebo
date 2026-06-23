@@ -38,6 +38,10 @@ export const useTMDB = () => {
       language: locale.value,
       // region: regionStore.region,
       timezone: timezoneStore.timezone,
+      images: {
+        secure_images_url: true,
+        autocomplete_paths: true,
+      },
     })
   })
 
