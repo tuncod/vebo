@@ -15,11 +15,12 @@ export default defineNuxtPlugin(() => {
     provide: {
       tmdb: () => {
         // const store = useTimezoneStore()
-        // const { locale } = useI18n()
+        const { localeProperties } = useI18n()
 
         return new TMDB('demo-key', {
           // language: locale.value ?? 'en-US',
           // timezone: store.timezone ?? 'Europe/Madrid',
+          language: localeProperties?.value.code || 'en-US', // 'en-US', // 'ar-SA',
         })
       }
     }
