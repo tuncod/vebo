@@ -53,7 +53,7 @@ export default defineEventHandler(async (event) => {
       setResponseHeader(event, 'x-tmdb-key-attempts', String(i + 1))
       // setResponseHeader(event, 'x-tmdb-req-path', String(path))
 
-      results.vb = {
+      result.vb = {
         path,
       }
 
