@@ -57,7 +57,7 @@ const isDark = computed({
             <span class="text-xs text-zinc-600 dark:text-zinc-400">Change theme You Want</span>
           </div>
           <div>
-            <UColorModeSwitch size="xl" color="neutral" />
+            <UColorModeSwitch size="xl" />
           </div>
         </div>
       </div>
