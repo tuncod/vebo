@@ -57,9 +57,16 @@ const sslect = ref('')
             <span class="text-xs text-zinc-600 dark:text-zinc-400">Change Language You Want</span>
           </div>
           <div>
-            <ULocaleSelect :model-value="language"
-              :locales="availableLanguages"
-              @update:model-value="setLocale($event)" />
+            <Select v-model="language">
+              <SelectTrigger class="border-0 shadow-none">
+                <SelectValue placeholder="Select a language" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem v-for="lang in availableLanguages" :value="lang.code" :key="lang.code">
+                  {{ lang.emoji }} {{ lang.name }}
+                </SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
         <div class="flex flex-row items-center p-4 rounded-b-xl bg-zinc-50 dark:bg-zinc-900">
@@ -74,18 +81,6 @@ const sslect = ref('')
       </div>
 
     </div>
-
-
-  <Select v-model="language">
-    <SelectTrigger class="border-0 shadow-none">
-      <SelectValue placeholder="Select a language" />
-    </SelectTrigger>
-    <SelectContent>
-      <SelectItem v-for="lang in availableLanguages" :value="lang.code" :key="lang.code">
-        {{ lang.emoji }} {{ lang.name }}
-      </SelectItem>
-    </SelectContent>
-  </Select>
 
 
 
