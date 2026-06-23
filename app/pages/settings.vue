@@ -41,5 +41,14 @@ const isDark = computed({
       </label>
     </div>
 
+    <div class="w-full flex">
+      <div class="w-full">
+        <span>Change Color mode</span>
+      </div>
+      <div class="">
+        <UColorModeSwitch size="xl" color="neutral" />
+      </div>
+    </div>
+
   </div> 
 </template>
