@@ -50,7 +50,7 @@ const isDark = computed({
       </div>
       <div class="">
         <ULocaleSelect :model-value="locale"
-          :locales="Object.values(locales.value)"
+          :locales="Object.values(locales)"
           @update:model-value="setLocale($event)" />
       </div>
     </div>
