@@ -88,10 +88,12 @@ export default defineNuxtConfig({
       ],
     },
 
+/*
     pageTransition: {
       name: 'page',
       mode: 'out-in'
     },
+*/
 
     // keepalive: true,
   },
@@ -115,9 +117,13 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     locales: [
       { code: 'ar-TN', name: 'Arabic', file: 'ar.json', dir: 'rtl' },
-      { code: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'en-US', name: 'English', file: 'en.json', dir: 'ltr' },
     ],
     restructureDir: 'app',
+  },
+
+  ui: {
+    fonts: false
   },
 
   shadcn: {
