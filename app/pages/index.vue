@@ -17,8 +17,6 @@ const fullscreen = () => {
 }
 
 onMounted(() => {
-  console.log(moviesData)
-  console.log(showsData)
   const layout = window.localStorage.getItem('app_layout')
   if (layout) {
     setPageLayout(layout)
