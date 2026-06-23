@@ -27,8 +27,8 @@ export const useTMDB = () => {
   const timezoneStore = useTimezoneStore()
   // const regionStore = useRegionStore()
 
-  console.log(locale)
-  console.log(localeProperties)
+  console.log(locale.value)
+  console.log(localeProperties.value)
   console.log(timezoneStore.timezone)
 
   const tmdb = computed(() => {
@@ -39,7 +39,7 @@ export const useTMDB = () => {
     })
   })
 
-  return tmdb
+  return tmdb.value
 }
 
 export const useTMDBbbb = () => {
