@@ -15,8 +15,8 @@ export default defineNuxtPlugin(() => {
     provide: {
       tmdb: () => {
         // const store = useTimezoneStore()
-        const { localeProperties } = useI18n()
-        console.log(localeProperties)
+        const loc = useI18n()
+        console.log(loc)
         return new TMDB('demo-key', {
           // language: locale.value ?? 'en-US',
           // timezone: store.timezone ?? 'Europe/Madrid',
