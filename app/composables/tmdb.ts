@@ -27,15 +27,17 @@ export const useTMDB = () => {
   const timezoneStore = useTimezoneStore()
   // const regionStore = useRegionStore()
 
+/*
   console.log(locale.value)
   console.log(localeProperties.value)
   console.log(timezoneStore.timezone)
+*/
 
   const tmdb = computed(() => {
     return new TMDB('kkk', {
-      // language: locale.value,
+      language: locale.value,
       // region: regionStore.region,
-      // timezone: timezoneStore.timezone,
+      timezone: timezoneStore.timezone,
     })
   })
 
