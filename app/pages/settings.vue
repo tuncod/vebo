@@ -4,6 +4,19 @@ import { ar, en } from '@nuxt/ui/locale'
 const { setLocale, locale, locales } = useI18n()
 const colorMode = useColorMode()
 
+const availableLanguages = [
+  {
+    name: 'English',
+    code: 'en-US',
+    dir: 'ltr',
+  },
+  {
+    name: 'العربية',
+    code: 'ar-TN',
+    dir: 'rtl',
+  },
+]
+
 const language = computed({
   get: () => locale.value,
   set: value => {
@@ -20,6 +33,7 @@ const isDark = computed({
 
 onMounted(() => {
   console.log(ar)
+  console.log(locales)
 })
 </script>
 <template>
