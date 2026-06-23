@@ -45,3 +45,29 @@ export const useTMDB = () => {
 
   return tmdb
 }
+
+export const useTMDB2 = () => {
+  const timezoneStore = useTimezoneStore()
+  const { locale } = useI18n()
+
+  const tmdb = computed(() => {
+    return new TMDB('demo-key', {
+      language: locale.value || 'en-US',
+      timezone: timezoneStore.timezone,
+      images: {
+        secure_images_url: true,
+        autocomplete_paths: true,
+      },
+    })
+  })
+
+  return { tmdb }
+}
+
+export const useTMDBAsync = (key: string, fetcher: (tmdb: TMDB) => any) => {
+  const createTMDB = useTMDBClient()
+
+  return useAsyncData(key, () => {
+    return fetcher(createTMDB())
+  })
+}

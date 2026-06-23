@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const { data: movies } = await useAsyncData('trending_movies_week', () => useTMDB().trending.movies({ time_window: 'week' }))
-const { data: shows } = await useAsyncData('trending_shows_week', () => useTMDB().trending.tv({ time_window: 'week' }))
+const { tmdb } = useTMDB2()
+const { data: movies } = await useAsyncData('trending_movies_week', () => tmdb.trending.movies({ time_window: 'week' }))
+const { data: shows } = await useAsyncData('trending_shows_week', () => tmdb.trending.tv({ time_window: 'week' }))
 
 /*
 const movies = ref({ results: [] })
