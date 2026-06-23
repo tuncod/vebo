@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import * as localess from '@nuxt/ui/locale'
+import { ar, en } from '@nuxt/ui/locale'
 
 const { setLocale, locale, locales } = useI18n()
 const colorMode = useColorMode()
@@ -19,8 +19,37 @@ const isDark = computed({
 })
 </script>
 <template>
-  <div class="mt-6 px-3 flex-col">
-    <h1 class="text-4xl text-red-600 mt-26">settings</h1>
+  <div class="px-3 flex-col">
+
+    <h1 class="text-4xl text-zinc-950 mt-26">settings</h1>
+
+    <div class="">
+      <h3 class="mb-2 text-xl text-zinc-950 font-bold">Appearance</h3>
+
+      <div class="px-2">
+        <div class="flex flex-row items-center p-4 rounded-t-xl bg-zinc-50">
+          <div class="w-full flex flex-col">
+            <span class="text-base text-zinc-900 font-bold mb-1">Language</span>
+            <span class="text-xs text-zinc-600">Change Language You Want</span>
+          </div>
+          <div>
+            <ULocaleSelect :model-value="language"
+              :locales="[ ar, en ]"
+              @update:model-value="setLocale($event)" />
+          </div>
+        </div>
+        <div class="flex flex-row items-center p-4 rounded-t-xl bg-zinc-50">
+          <div class="w-full flex flex-col">
+            <span class="text-base text-zinc-900 font-bold mb-1">Theme</span>
+            <span class="text-xs text-zinc-600">Change theme You Want</span>
+          </div>
+          <div>
+            <UColorModeSwitch size="xl" color="neutral" />
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <div class="max-w-sm mx-auto">
       <label for="languages" class="block mb-2.5 text-sm font-medium text-heading">Select an option</label>
