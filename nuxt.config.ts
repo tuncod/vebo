@@ -116,7 +116,7 @@ export default defineNuxtConfig({
     defaultLocale: 'ar-TN',
     strategy: 'no_prefix',
     locales: [
-      { code: 'ar-TN', name: 'Arabic', file: 'ar.json', dir: 'rtl' },
+      { code: 'ar-TN', name: 'العربية', file: 'ar.json', dir: 'rtl' },
       { code: 'en-US', name: 'English', file: 'en.json', dir: 'ltr' },
     ],
     restructureDir: 'app',
