@@ -51,7 +51,7 @@ const isDark = computed({
               @update:model-value="setLocale($event)" />
           </div>
         </div>
-        <div class="flex flex-row items-center p-4 rounded-b-xl bg-zinc-50">
+        <div class="flex flex-row items-center p-4 rounded-b-xl bg-zinc-50 dark:bg-zinc-900">
           <div class="w-full flex flex-col">
             <span class="text-base text-zinc-900 dark:text-zinc-100 font-bold mb-1">Theme</span>
             <span class="text-xs text-zinc-600 dark:text-zinc-400">Change theme You Want</span>
