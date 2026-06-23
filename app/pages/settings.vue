@@ -2,9 +2,12 @@
 const { setLocale, locale, locales } = useI18n()
 const colorMode = useColorMode()
 
-function changeLocale(lang: string) {
-  setLocale(lang)
-}
+const language = computed({
+  get: () => locale.value,
+  set: value => {
+    setLocale(value)
+  }
+})
 
 const isDark = computed({
   get: () => colorMode.value === 'dark',
@@ -17,16 +20,9 @@ const isDark = computed({
   <div class="mt-6 px-3 flex-col">
     <h1 class="text-4xl text-red-600 mt-26">settings</h1>
     <label>Language</label>
-    <select
-      :value="locale"
-      @change="changeLocale(($event.target as HTMLSelectElement).value)"
-    >
-      <option
-        v-for="lang in locales"
-        :key="lang.code"
-        :value="lang.code"
-      >
-        {{ lang.name }}
+    <select v-model="language">
+      <option v-for="item in locales" :key="item.code" :value="item.code">
+        {{ item.name }}
       </option>
     </select>
     <div class="flex items-center gap-3">
