@@ -35,6 +35,7 @@ const pickKey = (used = new Set()) => {
 
 export default defineEventHandler(async (event) => {
   const path = event.context.params._
+  const query = getQuery(event)
 
   const usedKeys = new Set()
   let lastError
@@ -45,17 +46,16 @@ export default defineEventHandler(async (event) => {
 
     try {
       const result = await tmdbFetch(path, {
-        query: { api_key: apiKey },
+        query: {
+          ...query,
+          api_key: apiKey
+        },
       })
 
       // 👇 set header BEFORE returning
       setResponseHeader(event, 'x-tmdb-keys-used', String(usedKeys.size))
       setResponseHeader(event, 'x-tmdb-key-attempts', String(i + 1))
       // setResponseHeader(event, 'x-tmdb-req-path', String(path))
-
-      result.vb = {
-        path,
-      }
 
       return result
     } catch (err) {
