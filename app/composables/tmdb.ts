@@ -23,15 +23,19 @@ class TMDB extends BaseTMDB {
 }
 
 export const useTMDB = () => {
-  const { locale } = useI18n()
+  const { locale, localeProperties } = useI18n()
   const timezoneStore = useTimezoneStore()
   // const regionStore = useRegionStore()
 
+  console.log(locale)
+  console.log(localeProperties)
+  console.log(timezoneStore.timezone)
+
   const tmdb = computed(() => {
     return new TMDB('kkk', {
-      language: locale.value,
+      // language: locale.value,
       // region: regionStore.region,
-      timezone: timezoneStore.timezone,
+      // timezone: timezoneStore.timezone,
     })
   })
 
