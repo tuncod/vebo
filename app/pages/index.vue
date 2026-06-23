@@ -1,12 +1,10 @@
 <script setup lang="ts">
 const tmdb = useTMDB()
-const { data: movies } = await useAsyncData('trending_movies_week', () => tmdb.trending.movies({ time_window: 'week' }))
-const { data: shows } = await useAsyncData('trending_shows_week', () => tmdb.trending.tv({ time_window: 'week' }))
+const { data: moviess } = await useAsyncData('trending_movies_week', () => tmdb.trending.movies({ time_window: 'week' }))
+const { data: showss } = await useAsyncData('trending_shows_week', () => tmdb.trending.tv({ time_window: 'week' }))
 
-/*
 const movies = ref({ results: [] })
 const shows = ref({ results: [] })
-*/
 
 const fullscreen = () => {
   if (!document.fullscreenElement) {
@@ -18,6 +16,7 @@ const fullscreen = () => {
 
 onMounted(() => {
   const layout = window.localStorage.getItem('app_layout')
+  console.log(tmdb)
   if (layout) {
     setPageLayout(layout)
   }
