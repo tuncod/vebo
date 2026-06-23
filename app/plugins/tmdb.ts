@@ -18,8 +18,8 @@ export default defineNuxtPlugin(() => {
         const { locale } = useI18n()
 
         return new TMDB('demo-key', {
-          language: locale.value ?? 'en-US',
-          timezone: store.timezone ?? 'Europe/Madrid',
+          // language: locale.value ?? 'en-US',
+          // timezone: store.timezone ?? 'Europe/Madrid',
         })
       }
     }
