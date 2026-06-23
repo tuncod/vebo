@@ -14,11 +14,13 @@ const availableLanguages = [
     name: 'English',
     code: 'en-US',
     dir: 'ltr',
+    emoji: '🇺🇸',
   },
   {
     name: 'العربية',
     code: 'ar-TN',
     dir: 'rtl',
+    emoji: '🇹🇳',
   }
 ]
 
@@ -74,29 +76,13 @@ const sslect = ref('')
     </div>
 
 
-
-{{ sslect }}
-
-
-  <Select v-model="sslect">
-    <SelectTrigger class="border-0">
-      <SelectValue placeholder="Select a fruit" />
+  <Select v-model="language">
+    <SelectTrigger class="border-0 shadow-none">
+      <SelectValue placeholder="Select a language" />
     </SelectTrigger>
     <SelectContent>
-      <SelectItem value="apple">
-        Apple
-      </SelectItem>
-      <SelectItem value="banana">
-        Banana
-      </SelectItem>
-      <SelectItem value="blueberry">
-        Blueberry
-      </SelectItem>
-      <SelectItem value="grapes">
-        Grapes
-      </SelectItem>
-      <SelectItem value="pineapple">
-        Pineapple
+      <SelectItem v-for="locale in availableLanguages" :value="locale.code">
+        {{ locale.emoji }} {{ local.name }}
       </SelectItem>
     </SelectContent>
   </Select>
