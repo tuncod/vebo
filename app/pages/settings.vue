@@ -34,6 +34,7 @@ const isDark = computed({
 onMounted(() => {
   console.log(ar)
   console.log(locales)
+  console.log(availableLanguages)
 })
 </script>
 <template>
@@ -52,7 +53,7 @@ onMounted(() => {
           </div>
           <div>
             <ULocaleSelect :model-value="language"
-              :locales="[ ar, en ]"
+              :locales="availableLanguages"
               @update:model-value="setLocale($event)" />
           </div>
         </div>
