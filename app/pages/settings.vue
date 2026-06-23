@@ -78,7 +78,7 @@ const sslect = ref('')
 {{ sslect }}
 
 
-  <Select v-model="sslect">
+  <Select v-model="sslect" class="bg-red-600">
     <SelectTrigger>
       <SelectValue placeholder="Select a fruit" />
     </SelectTrigger>
