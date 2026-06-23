@@ -17,13 +17,17 @@ const isDark = computed({
     colorMode.preference = value ? 'dark' : 'light'
   }
 })
+
+onMounted(() => {
+  console.log(ar)
+})
 </script>
 <template>
   <div class="px-3 flex-col">
 
     <h1 class="text-4xl text-zinc-950 mt-26">settings</h1>
 
-    <div class="">
+    <div class="mb-12">
       <h3 class="mb-2 text-xl text-zinc-950 font-bold">Appearance</h3>
 
       <div class="px-2">
@@ -38,7 +42,7 @@ const isDark = computed({
               @update:model-value="setLocale($event)" />
           </div>
         </div>
-        <div class="flex flex-row items-center p-4 rounded-t-xl bg-zinc-50">
+        <div class="flex flex-row items-center p-4 rounded-b-xl bg-zinc-50">
           <div class="w-full flex flex-col">
             <span class="text-base text-zinc-900 font-bold mb-1">Theme</span>
             <span class="text-xs text-zinc-600">Change theme You Want</span>
