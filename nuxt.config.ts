@@ -123,7 +123,11 @@ export default defineNuxtConfig({
   },
 
   ui: {
-    fonts: false
+    fonts: false,
+    colors: {
+      primary: 'spring',
+      neutral: 'zinc'
+    },
   },
 
   shadcn: {
