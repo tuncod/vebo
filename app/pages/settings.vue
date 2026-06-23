@@ -49,7 +49,7 @@ const isDark = computed({
         <span>Change language</span>
       </div>
       <div class="">
-        <ULocaleSelect :model-value="language" "locales="Object.values(localess)" />
+        <ULocaleSelect :model-value="language" :locales="Object.values(localess)" />
       </div>
     </div>
     <div class="w-full flex">
