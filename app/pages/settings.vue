@@ -15,6 +15,7 @@ const availableLanguages = [
     code: 'ar-TN',
     dir: 'rtl',
   },
+  ar, en,
 ]
 
 const language = computed({
