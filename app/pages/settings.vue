@@ -63,7 +63,7 @@ const sslect = ref('')
               </SelectTrigger>
               <SelectContent>
                 <SelectItem v-for="lang in availableLanguages" :value="lang.code" :key="lang.code">
-                  {{ lang.emoji }} {{ lang.name }}
+                  {{ lang.name }}
                 </SelectItem>
               </SelectContent>
             </Select>
