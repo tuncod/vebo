@@ -51,6 +51,7 @@ export default defineEventHandler(async (event) => {
       // 👇 set header BEFORE returning
       setResponseHeader(event, 'x-tmdb-keys-used', String(usedKeys.size))
       setResponseHeader(event, 'x-tmdb-key-attempts', String(i + 1))
+      setResponseHeader(event, 'x-tmdb-req-path', String(path))
 
       return result
     } catch (err) {
