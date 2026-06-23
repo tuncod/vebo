@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { setLocale, locale, locales } = useI18n()
 const colorMode = useColorMode()
+import { en, ar } from '@nuxt/ui/locale'
 
 const language = computed({
   get: () => locale.value,
@@ -41,6 +42,15 @@ const isDark = computed({
       </label>
     </div>
 
+
+    <div class="w-full flex">
+      <div class="w-full">
+        <span>Change language</span>
+      </div>
+      <div class="">
+        <ULocaleSelect :model-value="language" "locales="[en, ar]" />
+      </div>
+    </div>
     <div class="w-full flex">
       <div class="w-full">
         <span>Change Color mode</span>
