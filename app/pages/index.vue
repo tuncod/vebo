@@ -16,7 +16,6 @@ const fullscreen = () => {
 
 onMounted(() => {
   const layout = window.localStorage.getItem('app_layout')
-  console.log(tmdb)
   if (layout) {
     setPageLayout(layout)
   }
@@ -43,15 +42,15 @@ onMounted(() => {
   </div>
   <div class="px-3">
     <UiMediaScroll :items="movies.results" title="This Week's Trending Movies">
-      <template #item="{ poster_path, original_title, vote_average, release_date }">
-        <UiMediaCard :poster="poster_path" :title="original_title" :score="vote_average" :year="release_date" />
+      <template #item="{ poster_path, title, original_title, vote_average, release_date }">
+        <UiMediaCard :poster="poster_path" :title="title || original_title" :score="vote_average" :year="release_date" />
       </template>
     </UiMediaScroll>
   </div>
   <div class="px-3">
     <UiMediaScroll :items="shows.results" title="This Week's Trending TV Shows">
-      <template #item="{ poster_path, original_name, vote_average, first_air_date }">
-        <UiMediaCard :poster="poster_path" :title="original_name" :score="vote_average" :year="first_air_date" />
+      <template #item="{ poster_path, name, original_name, vote_average, first_air_date }">
+        <UiMediaCard :poster="poster_path" :title="name || original_name" :score="vote_average" :year="first_air_date" />
       </template>
     </UiMediaScroll>
   </div>
