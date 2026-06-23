@@ -43,6 +43,7 @@ const isDark = computed({
       </label>
     </div>
 
+    {{ locales }} {{ localess }}
 
     <div class="w-full flex">
       <div class="w-full">
@@ -50,7 +51,7 @@ const isDark = computed({
       </div>
       <div class="">
         <ULocaleSelect :model-value="locale"
-          :locales="Object.values(locales)"
+          :locales="Object.values({})"
           @update:model-value="setLocale($event)" />
       </div>
     </div>
