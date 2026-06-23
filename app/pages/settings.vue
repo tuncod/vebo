@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const { locale, locales } = useI18n()
+const { setLocale, locale, locales } = useI18n()
 const colorMode = useColorMode()
 
 function changeLocale(lang: string) {
-  locale.value = lang
+  setLocale(lang)
 }
 
 const isDark = computed({
