@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/sh/select'
 const { setLocale, locale } = useI18n()
 const colorMode = useColorMode()
 
@@ -28,6 +35,8 @@ const isDark = computed({
     colorMode.preference = value ? 'dark' : 'light'
   }
 })
+
+const sslect = ref('')
 </script>
 <template>
   <div class="px-3 flex-col">
@@ -63,6 +72,37 @@ const isDark = computed({
       </div>
 
     </div>
+
+
+
+{{ sslect }}
+
+
+  <Select v-modal="sslect">
+    <SelectTrigger>
+      <SelectValue placeholder="Select a fruit" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="apple">
+        Apple
+      </SelectItem>
+      <SelectItem value="banana">
+        Banana
+      </SelectItem>
+      <SelectItem value="blueberry">
+        Blueberry
+      </SelectItem>
+      <SelectItem value="grapes">
+        Grapes
+      </SelectItem>
+      <SelectItem value="pineapple">
+        Pineapple
+      </SelectItem>
+    </SelectContent>
+  </Select>
+
+
+
 
   </div> 
 </template>
