@@ -45,5 +45,5 @@ const isDark = computed({
 
     <span>🌙</span>
   </div>
-  </div>
+  </div> 
 </template>
