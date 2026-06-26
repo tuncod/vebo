@@ -8,7 +8,7 @@ import {
 } from '@/components/sh/select'
 const { setLocale, locale } = useI18n()
 const colorMode = useColorMode()
-const { timezone } = useTimezoneStore()
+const timezoneStore = useTimezoneStore()
 
 const availableLanguages = [
   {
@@ -65,6 +65,12 @@ const isDark = computed({
   }
 })
 
+const timezone = computed({
+  get: () => timezoneStore.timezone.value,
+  set: value => {
+    timezoneStore.setTimezone(value)
+  }
+})
 const sslect = ref('')
 </script>
 <template>
