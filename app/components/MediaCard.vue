@@ -1,4 +1,6 @@
 <script setup>
+const tmdb = useTMDB()
+
 const props = defineProps({
   id: {
     type: String,
@@ -9,8 +11,17 @@ const props = defineProps({
     required: true,
   },
 })
+
+const { data } = await useAsyncData('movie', () => await tmdb.movies.details({
+  movie_id: props.id,
+  append_to_response: ['credits', 'videos', 'images', 'external_ids'],
+}))
+
 </script>
 
 <template>
-  {{ id }}
+  <NuxtLink :to="`/details/${props.id}`">
+    <div class="hidden">{{ data }}</div>
+    <UiMediaCard :poster="data.poster_path" :title="data.title || data.original_title" :score="data.vote_average" :year="data.release_date" />
+  </NuxtLink>
 </template>
