@@ -8,6 +8,7 @@ import {
 } from '@/components/sh/select'
 const { setLocale, locale } = useI18n()
 const colorMode = useColorMode()
+const { timezone } = useTimezoneStore()
 
 const availableLanguages = [
   {
@@ -22,6 +23,32 @@ const availableLanguages = [
     dir: 'rtl',
     emoji: '🇹🇳',
   }
+]
+
+const availableTimezones = [
+  'Africa/Nouakchott', // Mauritania
+  'Africa/Algiers',    // Algeria
+  'Africa/Tunis',      // Tunisia
+  'Africa/Cairo',      // Egypt
+  'Africa/Tripoli',    // Libya
+  'Africa/Khartoum',   // Sudan
+  'Africa/Djibouti',   // Djibouti
+  'Africa/Mogadishu',  // Somalia
+  'Indian/Comoro',     // Comoros
+
+  'Asia/Riyadh',       // Saudi Arabia
+  'Asia/Baghdad',      // Iraq
+  'Asia/Kuwait',       // Kuwait
+  'Asia/Qatar',        // Qatar
+  'Asia/Bahrain',      // Bahrain
+  'Asia/Aden',         // Yemen
+  'Asia/Amman',        // Jordan
+  'Asia/Damascus',     // Syria
+  'Asia/Gaza',         // Palestine (Gaza)
+  'Asia/Hebron',       // Palestine (West Bank)
+
+  'Asia/Dubai',        // United Arab Emirates
+  'Asia/Muscat',       // Oman
 ]
 
 const language = computed({
@@ -69,6 +96,26 @@ const sslect = ref('')
             </Select>
           </div>
         </div>
+
+        <div class="flex flex-row items-center p-4 bg-zinc-50 dark:bg-zinc-900">
+          <div class="w-full flex flex-col">
+            <span class="text-base text-zinc-900 dark:text-zinc-100 font-bold mb-1">Timezone</span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-400">Change Timezone You Want</span>
+          </div>
+          <div>
+            <Select v-model="timezone">
+              <SelectTrigger class="border-0 shadow-none">
+                <SelectValue placeholder="Select a timezone" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem v-for="tmzn in availableTimezones" :value="tmzn" :key="tmzn">
+                  {{ tmzn }}
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
         <div class="flex flex-row items-center p-4 bg-zinc-50 dark:bg-zinc-900">
           <div class="w-full flex flex-col">
             <span class="text-base text-zinc-900 dark:text-zinc-100 font-bold mb-1">Theme</span>
