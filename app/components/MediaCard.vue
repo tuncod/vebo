@@ -12,7 +12,7 @@ const props = defineProps({
   },
 })
 
-const { data } = await useAsyncData('movie', () => await tmdb.movies.details({
+const { data } = await useAsyncData('movie', () => tmdb.movies.details({
   movie_id: props.id,
   append_to_response: ['credits', 'videos', 'images', 'external_ids'],
 }))
