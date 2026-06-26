@@ -66,7 +66,7 @@ const isDark = computed({
 })
 
 const timezone = computed({
-  get: () => timezoneStore.timezone.value,
+  get: () => timezoneStore.timezone,
   set: value => {
     timezoneStore.setTimezone(value)
   }
