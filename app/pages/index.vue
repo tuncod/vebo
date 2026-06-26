@@ -43,7 +43,7 @@ onMounted(() => {
   <div class="px-3">
     <UiMediaScroll :items="movies.results" title="This Week's Trending Movies">
       <template #item="{ id, poster_path, title, original_title, vote_average, release_date }">
-        <MediaCard :id :lazy="true" />
+        <MediaCard :id :lazy="true" type="movie" />
       </template>
     </UiMediaScroll>
   </div>
