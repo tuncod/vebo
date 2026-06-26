@@ -50,8 +50,8 @@ const sslect = ref('')
     <div class="">
       <h3 class="mb-2 text-xl text-zinc-700 dark:text-zinc-200 font-bold">Appearance</h3>
 
-      <div class="px-2">
-        <div class="flex flex-row items-center p-4 rounded-t-xl bg-zinc-50 dark:bg-zinc-900">
+      <div class="px-2 [&>:first-child]:rounded-t-xl [&>:last-child]:rounded-b-xl">
+        <div class="flex flex-row items-center p-4 bg-zinc-50 dark:bg-zinc-900">
           <div class="w-full flex flex-col">
             <span class="text-base text-zinc-900 dark:text-zinc-100 font-bold mb-1">Language</span>
             <span class="text-xs text-zinc-600 dark:text-zinc-400">Change Language You Want</span>
@@ -69,7 +69,7 @@ const sslect = ref('')
             </Select>
           </div>
         </div>
-        <div class="flex flex-row items-center p-4 rounded-b-xl bg-zinc-50 dark:bg-zinc-900">
+        <div class="flex flex-row items-center p-4 bg-zinc-50 dark:bg-zinc-900">
           <div class="w-full flex flex-col">
             <span class="text-base text-zinc-900 dark:text-zinc-100 font-bold mb-1">Theme</span>
             <span class="text-xs text-zinc-600 dark:text-zinc-400">Change theme You Want</span>
