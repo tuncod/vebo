@@ -11,7 +11,7 @@ export const useTimezoneStore = defineStore('timezone', () => {
   }
 
   return {
-    theme,
+    timezone,
     setTimezone,
   }
 })
