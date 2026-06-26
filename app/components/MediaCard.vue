@@ -21,7 +21,6 @@ const { data } = await useAsyncdata.value('movies_details_' + props.id', () => t
 
 <template>
   <NuxtLink :to="`/details/${props.id}`">
-    <div class="hidden">{{ data }}</div>
     <UiMediaCard :poster="data.value.poster_path" :title="data.value.title || data.value.original_title" :score="data.value.vote_average" :year="data.value.release_date" />
   </NuxtLink>
 </template>
