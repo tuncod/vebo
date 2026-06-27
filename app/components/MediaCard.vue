@@ -12,15 +12,17 @@ const props = defineProps({
   },
 })
 
-const { data, pending } = await useAsyncdata.value('movies_details_' + props.id', () => tmdb.movies.details({
-  movie_id: props.id,
-  append_to_response: ['credits', 'videos', 'images', 'external_ids'],
-}))
+const { data, pending } = await useAsyncData('movies_details_' + props.id, () =>
+  tmdb.movies.details({
+    movie_id: props.id,
+    append_to_response: ['credits', 'videos', 'images', 'external_ids'],
+  }),
+)
 </script>
 
 <template>
   <UiMediaCard
-    :link="`/details/${props.id}`"
+    :link="`/details/${data.value.imdb_id}`"
     :loading="pending"
     :poster="data.value.poster_path"
     :title="data.value.title || data.value.original_title"
