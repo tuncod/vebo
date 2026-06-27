@@ -19,16 +19,19 @@ const { data, pending } = await useAsyncData('movies_details_' + props.id, () =>
   })
 )
 
-const path = computed(() => `/details/${data.value.imdb_id}`)
+const path = computed(() => {
+  if (!data.value?.imdb_id) return ''
+  return `/details/${data.value.imdb_id}`
+})
 </script>
 
 <template>
   <UiMediaCard
     :link="path"
     :loading="pending"
-    :poster="data.value.poster_path"
-    :title="data.value.title || data.value.original_title"
-    :score="data.value.vote_average"
-    :year="data.value.release_date"
+    :poster="data.value?.poster_path"
+    :title="data.value?.title || data.value?.original_title"
+    :score="data.value?.vote_average"
+    :year="data.value?.release_date"
   />
 </template>
