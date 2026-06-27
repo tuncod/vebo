@@ -16,7 +16,10 @@ const { data, status } = await useAsyncData('movies_details_' + props.id, () =>
   tmdb.movies.details({
     movie_id: props.id,
     append_to_response: ['credits', 'videos', 'images', 'external_ids'],
-  })
+  }), {
+    lazy: true,
+    server: false,
+  }
 )
 
 const pending = computed(() => status.value === 'pending')
