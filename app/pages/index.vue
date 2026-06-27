@@ -1,10 +1,12 @@
 <script setup lang="ts">
 const tmdb = useTMDB()
-const { data: movies, pending, error } = await useAsyncData('trending_movies_week', () => tmdb.trending.movies({ time_window: 'week' }))
+const { data: movies, status, error } = await useAsyncData('trending_movies_week', () => tmdb.trending.movies({ time_window: 'week' }))
 const { data: shows } = await useAsyncData('trending_shows_week', () => tmdb.trending.tv({ time_window: 'week' }))
 
 // const movies = ref({ results: [] })
 // const shows = ref({ results: [] })
+
+const pending = computed(() => status.value === 'pending')
 
 const fullscreen = () => {
   if (!document.fullscreenElement) {
