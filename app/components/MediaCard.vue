@@ -29,9 +29,9 @@ const path = computed(() => {
   <UiMediaCard
     :link="path"
     :loading="pending"
-    :poster="data.value?.poster_path"
-    :title="data.value?.title || data.value?.original_title"
-    :score="data.value?.vote_average"
-    :year="data.value?.release_date"
+    :poster="data?.poster_path"
+    :title="data?.title || data?.original_title"
+    :score="data?.vote_average"
+    :year="data?.release_date"
   />
 </template>
