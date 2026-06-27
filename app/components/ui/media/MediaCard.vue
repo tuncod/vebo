@@ -20,6 +20,10 @@ const props = defineProps({
     type: String | Number,
     required: false,
   },
+  loading: {
+    type: Boolean,
+    required: false,
+  },
 })
 
 const score = computed(() => Number(props.score).toFixed())

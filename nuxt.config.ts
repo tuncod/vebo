@@ -88,7 +88,7 @@ export default defineNuxtConfig({
       ],
     },
 
-/*
+    /*
     pageTransition: {
       name: 'page',
       mode: 'out-in'
@@ -126,7 +126,7 @@ export default defineNuxtConfig({
     fonts: false,
     colors: {
       primary: 'spring',
-      neutral: 'zinc'
+      neutral: 'zinc',
     },
   },
 

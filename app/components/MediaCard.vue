@@ -12,15 +12,19 @@ const props = defineProps({
   },
 })
 
-const { data } = await useAsyncdata.value('movies_details_' + props.id', () => tmdb.movies.details({
+const { data, pending } = await useAsyncdata.value('movies_details_' + props.id', () => tmdb.movies.details({
   movie_id: props.id,
   append_to_response: ['credits', 'videos', 'images', 'external_ids'],
 }))
-
 </script>
 
 <template>
-  <NuxtLink :to="`/details/${props.id}`">
-    <UiMediaCard :poster="data.value.poster_path" :title="data.value.title || data.value.original_title" :score="data.value.vote_average" :year="data.value.release_date" />
-  </NuxtLink>
+  <UiMediaCard
+    :link="`/details/${props.id}`"
+    :loading="pending"
+    :poster="data.value.poster_path"
+    :title="data.value.title || data.value.original_title"
+    :score="data.value.vote_average"
+    :year="data.value.release_date"
+  />
 </template>

@@ -22,7 +22,7 @@ export default defineNuxtPlugin(() => {
           // timezone: store.timezone ?? 'Europe/Madrid',
           // language: localeProperties?.value.code || 'en-US', // 'en-US', // 'ar-SA',
         })
-      }
-    }
+      },
+    },
   }
 })

@@ -27,7 +27,7 @@ export const useTMDB = () => {
   const timezoneStore = useTimezoneStore()
   // const regionStore = useRegionStore()
 
-/*
+  /*
   console.log(locale.value)
   console.log(localeProperties.value)
   console.log(timezoneStore.timezone)

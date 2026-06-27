@@ -8,8 +8,7 @@ export default defineAppConfig({
     colors: {
       primary: 'spring',
       secondary: 'purple',
-      neutral: 'zinc'
-    }
-  }
+      neutral: 'zinc',
+    },
+  },
 })
-

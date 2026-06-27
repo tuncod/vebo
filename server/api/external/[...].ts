@@ -48,7 +48,7 @@ export default defineEventHandler(async (event) => {
       const result = await tmdbFetch(path, {
         query: {
           ...query,
-          api_key: apiKey
+          api_key: apiKey,
         },
       })
 

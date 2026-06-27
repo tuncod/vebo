@@ -60,7 +60,7 @@ onMounted(() => {
     >
       <NuxtLink class="" v-for="item in navbar" :to="item.path">
         <div class="flex flex-col justify-center items-center w-full shrink-0">
-          <component :is="item.icon" class="size-8" />
+          <component class="size-8" :is="item.icon" />
           <span class="text-sm">{{ $t(item.key) }}</span>
         </div>
       </NuxtLink>

@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/sh/select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/sh/select'
 const { setLocale, locale } = useI18n()
 const colorMode = useColorMode()
 const timezoneStore = useTimezoneStore()
@@ -22,60 +16,59 @@ const availableLanguages = [
     code: 'ar-TN',
     dir: 'rtl',
     emoji: '🇹🇳',
-  }
+  },
 ]
 
 const availableTimezones = [
   'Africa/Nouakchott', // Mauritania
-  'Africa/Algiers',    // Algeria
-  'Africa/Tunis',      // Tunisia
-  'Africa/Cairo',      // Egypt
-  'Africa/Tripoli',    // Libya
-  'Africa/Khartoum',   // Sudan
-  'Africa/Djibouti',   // Djibouti
-  'Africa/Mogadishu',  // Somalia
-  'Indian/Comoro',     // Comoros
+  'Africa/Algiers', // Algeria
+  'Africa/Tunis', // Tunisia
+  'Africa/Cairo', // Egypt
+  'Africa/Tripoli', // Libya
+  'Africa/Khartoum', // Sudan
+  'Africa/Djibouti', // Djibouti
+  'Africa/Mogadishu', // Somalia
+  'Indian/Comoro', // Comoros
 
-  'Asia/Riyadh',       // Saudi Arabia
-  'Asia/Baghdad',      // Iraq
-  'Asia/Kuwait',       // Kuwait
-  'Asia/Qatar',        // Qatar
-  'Asia/Bahrain',      // Bahrain
-  'Asia/Aden',         // Yemen
-  'Asia/Amman',        // Jordan
-  'Asia/Damascus',     // Syria
-  'Asia/Gaza',         // Palestine (Gaza)
-  'Asia/Hebron',       // Palestine (West Bank)
+  'Asia/Riyadh', // Saudi Arabia
+  'Asia/Baghdad', // Iraq
+  'Asia/Kuwait', // Kuwait
+  'Asia/Qatar', // Qatar
+  'Asia/Bahrain', // Bahrain
+  'Asia/Aden', // Yemen
+  'Asia/Amman', // Jordan
+  'Asia/Damascus', // Syria
+  'Asia/Gaza', // Palestine (Gaza)
+  'Asia/Hebron', // Palestine (West Bank)
 
-  'Asia/Dubai',        // United Arab Emirates
-  'Asia/Muscat',       // Oman
+  'Asia/Dubai', // United Arab Emirates
+  'Asia/Muscat', // Oman
 ]
 
 const language = computed({
   get: () => locale.value,
-  set: value => {
+  set: (value) => {
     setLocale(value)
-  }
+  },
 })
 
 const isDark = computed({
   get: () => colorMode.value === 'dark',
   set: (value) => {
     colorMode.preference = value ? 'dark' : 'light'
-  }
+  },
 })
 
 const timezone = computed({
   get: () => timezoneStore.timezone,
-  set: value => {
+  set: (value) => {
     timezoneStore.setTimezone(value)
-  }
+  },
 })
 const sslect = ref('')
 </script>
 <template>
   <div class="px-3 flex-col">
-  
     <div class="font-heading">
       <h1 class="text-5xl font-black my-8">Settings</h1>
     </div>
@@ -132,11 +125,6 @@ const sslect = ref('')
           </div>
         </div>
       </div>
-
     </div>
-
-
-
-
-  </div> 
+  </div>
 </template>

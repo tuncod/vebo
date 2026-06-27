@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { TagsInputItemDeleteProps } from "reka-ui"
-import type { HTMLAttributes } from "vue"
+import type { TagsInputItemDeleteProps } from 'reka-ui'
+import type { HTMLAttributes } from 'vue'
 import { RiCloseLine } from '@remixicon/vue'
-import { reactiveOmit } from "@vueuse/core"
-import { TagsInputItemDelete, useForwardProps } from "reka-ui"
+import { reactiveOmit } from '@vueuse/core'
+import { TagsInputItemDelete, useForwardProps } from 'reka-ui'
 import { cn } from '@/lib/sh/utils'
 
-const props = defineProps<TagsInputItemDeleteProps & { class?: HTMLAttributes["class"] }>()
+const props = defineProps<TagsInputItemDeleteProps & { class?: HTMLAttributes['class'] }>()
 
-const delegatedProps = reactiveOmit(props, "class")
+const delegatedProps = reactiveOmit(props, 'class')
 
 const forwardedProps = useForwardProps(delegatedProps)
 </script>
