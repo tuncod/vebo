@@ -34,7 +34,7 @@ export const useTMDB = () => {
 */
 
   const tmdb = computed(() => {
-    return new TMDB('kkk', {
+    return new BaseTMDB(TMDB_API_KEY, {
       language: locale.value,
       // region: regionStore.region,
       timezone: timezoneStore.timezone,
