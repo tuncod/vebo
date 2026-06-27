@@ -41,7 +41,13 @@ export const useTMDB = () => {
       images: {
         secure_images_url: true,
         autocomplete_paths: true,
+        image_language_priority: {
+          posters: ['null', 'en', 'ar', '*'],
+        },
+        auto_include_image_language: true,
       },
+      retry: true,
+      rate_limit: true,
     })
   })
 
