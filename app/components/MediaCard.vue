@@ -12,12 +12,14 @@ const props = defineProps({
   },
 })
 
-const { data, pending } = await useAsyncData('movies_details_' + props.id, () =>
+const { data, status } = await useAsyncData('movies_details_' + props.id, () =>
   tmdb.movies.details({
     movie_id: props.id,
     append_to_response: ['credits', 'videos', 'images', 'external_ids'],
   })
 )
+
+const pending = computed(() => status.value === 'pending')
 
 const path = computed(() => {
   if (!data.value?.imdb_id) return ''
