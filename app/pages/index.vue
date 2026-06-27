@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const tmdb = useTMDB()
-const { data: movies } = await useAsyncData('trending_movies_week', () => tmdb.trending.movies({ time_window: 'week' }))
+const { data: movies, pending, error } = await useAsyncData('trending_movies_week', () => tmdb.trending.movies({ time_window: 'week' }))
 const { data: shows } = await useAsyncData('trending_shows_week', () => tmdb.trending.tv({ time_window: 'week' }))
 
 // const movies = ref({ results: [] })
@@ -40,8 +40,9 @@ onMounted(() => {
   <div class="font-heading px-3 hidden">
     <h1 class="text-5xl font-black my-8" @click="fullscreen">{{ $t('pages.home') }}</h1>
   </div>
-  <div class="px-3">
-    <UiMediaScroll :items="movies.results" title="This Week's Trending Movies">
+  <div class="px-3" v-if="pending">
+    <div v-if="error"></div>
+    <UiMediaScroll v-else :items="movies.results" title="This Week's Trending Movies">
       <template #item="{ id, poster_path, title, original_title, vote_average, release_date }">
         <MediaCard :id :lazy="true" type="movie" />
       </template>
