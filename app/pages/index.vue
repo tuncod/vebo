@@ -42,6 +42,7 @@ onMounted(() => {
   <div class="font-heading px-3 hidden">
     <h1 class="text-5xl font-black my-8" @click="fullscreen">{{ $t('pages.home') }}</h1>
   </div>
+  {{ pending }} - {{ status }}
   <div class="px-3" v-if="pending">
     <div v-if="error"></div>
     <UiMediaScroll v-else :items="movies.results" title="This Week's Trending Movies">
