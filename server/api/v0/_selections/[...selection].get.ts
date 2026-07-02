@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
 
   const selection = selections.get(selectionId)
 
-  const data = tmdb(selection, {
+  const data = tmdb(selection.endpoint, {
     query,
   })
 
