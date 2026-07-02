@@ -1,6 +1,6 @@
 import { ofetch } from 'ofetch'
 import { setResponseHeader } from 'h3'
-import { tmdb, usedKeys } from '....'
+import { tmdb, usedKeys } from '~~/server/utils/tmdb'
 
 export default defineEventHandler(async (event) => {
   const path = event.context.params._
