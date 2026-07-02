@@ -33,5 +33,6 @@ export default defineEventHandler(async (event) => {
   return {
     selectionId,
     selection,
+    usedKeys,
   }
 })
