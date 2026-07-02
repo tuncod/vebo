@@ -1,6 +1,7 @@
 import { ofetch } from 'ofetch'
 import { setResponseHeader } from 'h3'
 import { tmdb, usedKeys } from '~~/server/utils/tmdb'
+import { ref } from 'vue'
 
 const selections = new Map([
   [
@@ -18,6 +19,8 @@ export default defineEventHandler(async (event) => {
   const selectionId = event.context.params.selection
   const query = getQuery(event)
 
+  const votes = ref(0)
+
   const selection = selections.get(selectionId)
 
   const data = tmdb(selection.endpoint, {
@@ -33,6 +36,7 @@ export default defineEventHandler(async (event) => {
   return {
     selectionId,
     selection,
+    votes,
     usedKeys,
   }
 })
