@@ -1,6 +1,6 @@
 import { ofetch } from 'ofetch'
 import { setResponseHeader } from 'h3'
-import { tmdb, usedKeys } from '~/server/utils/tmdb'
+import { tmdb, usedKeys } from '~~/server/utils/tmdb'
 
 const selections = new Map([
   [
