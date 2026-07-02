@@ -185,6 +185,12 @@ importers:
       vue-router:
         specifier: ^5.1.0
         version: 5.1.0(@vue/compiler-sfc@3.5.38)(pinia@3.0.4(typescript@6.0.3)(vue@3.5.38(typescript@6.0.3)))(vite@7.3.5(@types/node@25.9.3)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.48.0)(tsx@4.22.4)(yaml@2.9.0))(vue@3.5.38(typescript@6.0.3))
+      wikibase-sdk:
+        specifier: ^11.6.3
+        version: 11.6.3
+      wikidata-sdk:
+        specifier: ^8.1.1
+        version: 8.1.1
     devDependencies:
       '@faker-js/faker':
         specifier: ^10.5.0
@@ -7568,6 +7574,19 @@ packages:
     resolution: {integrity: sha512-oGLe46MIrCRqX7ytPUf66EAYvdeMIZYn3WaocqqKZAxrBpkqHfL/qvTyJ/bTk5+AqHCjXmrv3CEWgy368zhRUg==}
     engines: {node: ^20.17.0 || >=22.9.0}
     hasBin: true
+
+  wikibase-sdk@11.6.3:
+    resolution: {integrity: sha512-WH62eiNcXryD9ACeR8WMFNYDFpOtII5JqpbshghJ82c8jnoZmObHei0I/cxhx0kiefa/NY0DVQdBHPyvGfjswg==}
+    engines: {node: '>= 12.0.0'}
+
+  wikibase-sdk@8.1.1:
+    resolution: {integrity: sha512-1NjMnfNQ4OaLh0dFAeTMvV3vGAq6HXsNKGfYUJYOVyBPGBDMunlY3QZ8+72hLV5FiKmc6Bzg1xbI0jCHfHmIew==}
+    engines: {node: '>= 10.0.0'}
+
+  wikidata-sdk@8.1.1:
+    resolution: {integrity: sha512-KOUhJtpCHg32k/tz7pFj/BaqiYAvYGz4sGzcT15t120832WtfNTGCSeohmln40/JOjpxzfzud/6q2x6Q0Ji5hg==}
+    engines: {node: '>= 6.4'}
+    deprecated: wikidata-sdk has been renamed wikibase-sdk
 
   word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
@@ -15323,6 +15342,14 @@ snapshots:
   which@6.0.1:
     dependencies:
       isexe: 4.0.0
+
+  wikibase-sdk@11.6.3: {}
+
+  wikibase-sdk@8.1.1: {}
+
+  wikidata-sdk@8.1.1:
+    dependencies:
+      wikibase-sdk: 8.1.1
 
   word-wrap@1.2.5: {}
 
