@@ -20,12 +20,18 @@ export default defineEventHandler(async (event) => {
 
   const selection = selections.get(selectionId)
 
+/*
   const data = tmdb(selection.endpoint, {
     query,
   })
 
   setResponseHeader(event, 'x-tmdb-keys-used', String(usedKeys.size))
   setResponseHeader(event, 'x-tmdb-key-attempts', String(i + 1))
+*/
 
-  return data
+
+  return {
+    selectionId,
+    selection,
+  }
 })
