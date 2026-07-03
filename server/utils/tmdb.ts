@@ -1,4 +1,5 @@
 import { ofetch } from 'ofetch'
+import { ref } from 'vue'
 
 export const TMDB_API_BASE = 'https://api.themoviedb.org/3'
 
@@ -41,7 +42,7 @@ export const pickKey = (used = new Set()) => {
   return available[Math.floor(Math.random() * available.length)]
 }
 
-export const usedKeys = new Set()
+const usedKeys = new Set()
 
 export const tmdb = ofetch.create({
   baseURL: TMDB_API_BASE,
@@ -54,4 +55,10 @@ export const tmdb = ofetch.create({
     usedKeys.add(apiKey)
     options.query.api_key = apiKey
   },
+  async onResponse({ response }) {
+    response.body = {
+      data: response.body,
+      usedKeys: usedKeys,
+    }
+  }
 })

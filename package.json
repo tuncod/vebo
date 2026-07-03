@@ -44,6 +44,7 @@
     "destr": "^2.0.5",
     "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
+    "freekeys": "^0.0.4",
     "geoip-country": "^5.0.202605270000",
     "hls-parser": "^0.16.1",
     "hls.js": "^1.6.16",
