@@ -50,13 +50,12 @@ onMounted(() => {
 
 <template>
   <NuxtLoadingIndicator />
-  <div class="font-body w-full min-h-screen bg-white dark:bg-[#111] select-none">
-    <main class="w-full min-h-screen" role="main" aria-live="polite">
+  <div class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none">
+    <main class="w-full md:w-2/3 min-h-screen" role="main" aria-live="polite">
       <slot />
     </main>
-    <div class="w-full h-16"></div>
     <div
-      class="flex justify-between items-center w-full h-16 px-4 fixed bottom-0 left-0 right-0 bg-white/40 backdrop-filter backdrop-blur-lg border-t border-zinc-200/40 z-20 lg:hidden"
+      class="flex justify-between items-center w-full h-16 px-4 fixed bottom-0 left-0 right-0 bg-white/40 backdrop-filter backdrop-blur-lg border-t border-zinc-200/40 z-20 md:hidden"
     >
       <NuxtLink class="" v-for="item in navbar" :to="item.path">
         <div class="flex flex-col justify-center items-center w-full shrink-0">
