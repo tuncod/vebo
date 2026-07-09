@@ -1,6 +1,6 @@
 import { ofetch } from 'ofetch'
 import { setResponseHeader } from 'h3'
-import { tmdb, usedKeys } from '~~/server/utils/tmdb'
+import { tmdb } from '~~/server/utils/tmdb'
 import { ref } from 'vue'
 
 const selections = new Map([
@@ -37,7 +37,6 @@ export default defineEventHandler(async (event) => {
     selectionId,
     selection,
     votes,
-    u: usedKeys.entries(),
     data,
   }
 })
