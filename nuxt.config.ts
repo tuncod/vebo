@@ -123,7 +123,7 @@ export default defineNuxtConfig({
   },
 
   pinia: {
-    storesDirs: ['./stores/**', './preferences/**'],
+    storesDirs: ['./stores/**', './stores/references/**'],
   },
 
   ui: {
