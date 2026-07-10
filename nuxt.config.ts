@@ -116,6 +116,7 @@ export default defineNuxtConfig({
     locale: 'ar-TN',
     defaultLocale: 'ar-TN',
     strategy: 'no_prefix',
+    cookieKey: 'preferences.language',
     locales: [
       { code: 'ar-TN', name: 'العربية', file: 'ar.json', dir: 'rtl' },
       { code: 'en-US', name: 'English', file: 'en.json', dir: 'ltr' },
