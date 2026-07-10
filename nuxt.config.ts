@@ -13,8 +13,8 @@ export default defineNuxtConfig({
       robots: false
     },
     '/about/**': { prerender: true },
-    '/details/**': { swr: 3600 },
-    '/tv/**': { swr: 21600 },
+    '/movies/**': { swr: 3600 },
+    '/shows/**': { swr: 21600 },
     '/keyword/**': { swr: 21600 },
     '/network/**': { swr: 86400 },
     '/season/**': { swr: 86400 },
