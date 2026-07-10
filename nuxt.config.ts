@@ -122,6 +122,10 @@ export default defineNuxtConfig({
     restructureDir: 'app',
   },
 
+  pinia: {
+    storesDirs: ['./stores/**', './preferences/**'],
+  },
+
   ui: {
     fonts: false,
     colors: {
