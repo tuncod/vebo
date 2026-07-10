@@ -51,7 +51,7 @@ onMounted(() => {
 <template>
   <NuxtLoadingIndicator />
   <div class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none">
-    <main class="w-full md:w-2/3 min-h-screen" role="main" aria-live="polite">
+    <main class="w-full max-w-7xl mx-auto min-h-screen" role="main" aria-live="polite">
       <slot />
     </main>
     <div
