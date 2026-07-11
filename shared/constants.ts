@@ -2,7 +2,7 @@ export const TMDB_API_BASE = 'https://api.themoviedb.org/3'
 
 export const WIKIDATA_INSTANCE = 'https://www.wikidata.org'
 export const WIKIDATA_SPARQL_ENDPOINT = 'https://query.wikidata.org/sparql'
-export const WIKIDATA_SPARQL_USERAGENT = ''
+export const WIKIDATA_SPARQL_USERAGENT = 'App'
 
 export const IMDB_PREFIX_ID = 263
 export const TMDB_MOVIES_PREFIX_ID = 739
