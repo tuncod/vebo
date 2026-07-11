@@ -60,5 +60,5 @@ export const tmdb = ofetch.create({
       data: response.body,
       usedKeys: usedKeys,
     }
-  }
+  },
 })

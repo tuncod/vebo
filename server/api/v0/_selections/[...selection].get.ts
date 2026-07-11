@@ -27,11 +27,10 @@ export default defineEventHandler(async (event) => {
     query,
   })
 
-/*
+  /*
   setResponseHeader(event, 'x-tmdb-keys-used', String(usedKeys.size))
   setResponseHeader(event, 'x-tmdb-key-attempts', String(i + 1))
 */
-
 
   return {
     selectionId,
