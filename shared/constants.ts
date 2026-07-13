@@ -1,8 +1,13 @@
-export const TMDB_API_BASE = 'https://api.themoviedb.org/3'
+export const APP_NAME = process.env.SQIDS_ALPHABET || 'My App'
+export const APP_VERSION 0.1.0
 
-export const WIKIDATA_INSTANCE = 'https://www.wikidata.org'
-export const WIKIDATA_SPARQL_ENDPOINT = 'https://query.wikidata.org/sparql'
-export const WIKIDATA_SPARQL_USERAGENT = 'App'
+export const DATABASE_URL = process.env.DATABASE_URL
+
+export const TMDB_API_BASE = process.env.TMDB_API_BASE || 'https://api.themoviedb.org/3'
+
+export const WIKIDATA_INSTANCE = process.env.WIKIDATA_INSTANCE || 'https://www.wikidata.org'
+export const WIKIDATA_SPARQL_ENDPOINT = process.env.WIKIDATA_SPARQL_ENDPOINT || 'https://query.wikidata.org/sparql'
+export const WIKIDATA_SPARQL_USERAGENT = process.env.WIKIDATA_SPARQL_USERAGENT || 'My App v' + APP_VERSION
 
 export const IMDB_PREFIX_ID = 263
 export const TMDB_MOVIES_PREFIX_ID = 739

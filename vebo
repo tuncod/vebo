@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+pnpm tsx --tsconfig=".nuxt/tsconfig.cli.json" cli/main.ts "$@"
