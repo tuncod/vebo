@@ -10,7 +10,20 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @utility no-scrollbar {
-  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar {
+  scrollbar-width: auto;
+
+  &::-webkit-scrollbar {
+    display: block;
+  }
 }
 
 @theme {

@@ -571,3 +571,14 @@
       .settings-api-actions { flex-direction: column; }
       .settings-api-actions .btn { width: 100%; }
     }
+    
+    
+    
+    
+
+
+
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
