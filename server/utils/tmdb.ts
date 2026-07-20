@@ -17,3 +17,5 @@ export class TMDB extends BaseTMDB {
 export const createClient = (options: TMDBOptions = {}): TMDB => {
   return new TMDB(options)
 }
+
+export const tmdb = createClient()
