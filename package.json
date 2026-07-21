@@ -14,7 +14,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "s:build": "tsup standalone/main.ts standalone/eruda.ts --format iife --platform browser --out-dir standalone/dist",
-    "format": "prettier --write \"*.{js,ts}\" \"app/**/*.{js,ts,vue,css,json}\" \"{server,cli}/**/*.{js,ts}\""
+    "format": "prettier --write \"*.{js,ts}\" \"app/**/*.{js,ts,vue,css,json}\" \"{server,cli,shared}/**/*.{js,ts}\""
   },
   "dependencies": {
     "@better-auth/api-key": "^1.6.23",

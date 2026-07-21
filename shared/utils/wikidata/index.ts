@@ -11,11 +11,7 @@ export class WikiBase {
   private readonly builder: WikibaseSdk
   private readonly client: $Fetch
 
-  constructor({
-    instance,
-    sparqlEndpoint,
-    userAgent,
-  }: WikiBaseOptions) {
+  constructor({ instance, sparqlEndpoint, userAgent }: WikiBaseOptions) {
     this.builder = WBK({
       instance,
       sparqlEndpoint,
