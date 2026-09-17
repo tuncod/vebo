@@ -115,7 +115,7 @@ export default defineNuxtConfig({
   i18n: {
     locale: 'ar-TN',
     defaultLocale: 'ar-TN',
-    strategy: 'prefix_and_default', // 'no_prefix',
+    strategy: 'no_prefix', // 'prefix_and_default', // 'no_prefix',
     detectBrowserLanguage: {
       cookieKey: 'preferences.language',
     },
