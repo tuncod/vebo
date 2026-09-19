@@ -44,13 +44,13 @@ const navbar = [
 ]
 
 onMounted(() => {
-  document.addEventListener('contextmenu', (e) => e.preventDefault())
+  // document.addEventListener('contextmenu', (e) => e.preventDefault())
 })
 </script>
 
 <template>
   <NuxtLoadingIndicator />
-  <div class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none">
+  <div class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none overflow-auto overscroll-none">
     <main class="w-full max-w-5xl mx-auto min-h-screen" role="main" aria-live="polite">
       <slot />
     </main>
