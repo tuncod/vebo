@@ -60,12 +60,14 @@ export default defineNuxtConfig({
   app: {
     head: {
       script: [
+      /*
         {
           src: 'https://unpkg.com/eruda',
         },
         {
           textContent: 'eruda.init();',
         },
+        */
       ],
       link: [
         {
