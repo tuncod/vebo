@@ -5,8 +5,10 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
 
   routeRules: {
-    /*
     '/': { prerender: true },
+    '/_mobileapp': { prerender: true },
+    '/_mobileapp/**': { prerender: true },
+    /*
     '/search': { prerender: true },
     '/settings': {
       prerender: true,
@@ -70,6 +72,7 @@ export default defineNuxtConfig({
         */
       ],
       link: [
+      /*
         {
           rel: 'preconnect',
           href: 'https://fonts.googleapis.com',
@@ -87,6 +90,7 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap',
         },
+        */
       ],
     },
 
