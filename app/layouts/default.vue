@@ -60,10 +60,10 @@ const shouldRefresh = computed(() => pullDistance.value > 100)
 
 <template>
   <NuxtLoadingIndicator />
-  <div ref="container" class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none overflow-auto overscroll-none">
-    <p v-if="isSwiping && shouldRefresh">Release to refresh...</p>
-    <p v-else-if="isSwiping">Pull down to refresh ({{ pullDistance }}px)</p>
-    <main class="w-full max-w-5xl mx-auto min-h-screen" role="main" aria-live="polite">
+  <div class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none overflow-auto overscroll-none">
+    <main ref="container" class="w-full max-w-5xl mx-auto min-h-screen" role="main" aria-live="polite">
+      <p v-if="isSwiping && shouldRefresh">Release to refresh...</p>
+      <p v-else-if="isSwiping">Pull down to refresh ({{ pullDistance }}px)</p>
       <slot />
     </main>
     <div
