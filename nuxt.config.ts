@@ -5,9 +5,9 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
 
   routeRules: {
-    '/': { prerender: true },
-    '/_mobileapp': { prerender: true },
-    '/_mobileapp/**': { prerender: true },
+    '/': { swr: false, prerender: true },
+    '/_mobileapp': { swr: false, prerender: true },
+    '/_mobileapp/**': { swr: false, prerender: true },
     /*
     '/search': { prerender: true },
     '/settings': {
