@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useSwipe } from '@vueuse/core'
 import { RiHomeFill } from '@remixicon/vue'
 // import { House } from '@lucide/vue'
 
@@ -46,11 +47,22 @@ const navbar = [
 onMounted(() => {
   // document.addEventListener('contextmenu', (e) => e.preventDefault())
 })
+
+const container = ref<HTMLElement | null>(null)
+const { distanceY, isSwiping } = useSwipe(container)
+
+// Check if user is pulling downwards
+const pullDistance = computed(() => (distanceY.value < 0 ? Math.abs(distanceY.value) : 0))
+
+// Example: Trigger refresh if pulled down more than 100px
+const shouldRefresh = computed(() => pullDistance.value > 100)
 </script>
 
 <template>
   <NuxtLoadingIndicator />
-  <div class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none overflow-auto overscroll-none">
+  <div ref="container" class="font-body w-full min-h-screen mb-16 md:mb-0 bg-white dark:bg-[#111] select-none overflow-auto overscroll-none">
+    <p v-if="isSwiping && shouldRefresh">Release to refresh...</p>
+    <p v-else-if="isSwiping">Pull down to refresh ({{ pullDistance }}px)</p>
     <main class="w-full max-w-5xl mx-auto min-h-screen" role="main" aria-live="polite">
       <slot />
     </main>
