@@ -1,35 +1,29 @@
 <script setup lang="ts">
-import { ref, useTemplateRef } from 'vue'
-import { useSwipe } from '@vueuse/core'
+const pageRef = ref<HTMLElement | null>(null)
 
-const containerRef = useTemplateRef('container')
-const refreshing = ref(false)
-const pullDistance = ref(0)
-
-const { isSwiping, direction, lengthY } = useSwipe(containerRef, {
-  threshold: 50,
-  onSwipeEnd: (e, direction) => {
-    // If swiping down and pulled enough distance
-    if (direction === 'down' && lengthY.value < -100) {
-      handleRefresh()
-    } else {
-      pullDistance.value = 0
-    }
-  }
+const { pullDistance, isRefreshing, progress } = usePullToRefresh(pageRef, {
+  onRefresh: async () => {
+    await refreshNuxtData() // or your own fetch/refresh logic
+  },
+  threshold: 70,
 })
-
-async function handleRefresh() {
-  refreshing.value = true
-  // Perform your data fetching / refresh logic here
-  await new Promise((resolve) => setTimeout(resolve, 1500))
-  refreshing.value = false
-  pullDistance.value = 0
-}
 </script>
 
 <template>
-  <div ref="container" class="overflow-y-auto h-screen">
-    <div v-if="refreshing" class="p-4 text-center">Refreshing...</div>
-    <!-- Your content here -->bfnfjf
+  <div ref="pageRef" class="min-h-screen overflow-y-auto">
+    <!-- Pull indicator -->
+    <div
+      class="flex items-center justify-center overflow-hidden transition-[height] duration-200"
+      :style="{ height: `${pullDistance}px` }"
+    >
+      <div
+        class="h-6 w-6 rounded-full border-2 border-slate-400 border-t-slate-900"
+        :class="isRefreshing ? 'animate-spin' : ''"
+        :style="!isRefreshing ? { transform: `rotate(${progress() * 360}deg)` } : {}"
+      />
+    </div>
+
+    <!-- Page content -->
+    bfjcjbcbcjfjjf
   </div>
 </template>
