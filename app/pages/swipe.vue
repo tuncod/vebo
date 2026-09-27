@@ -3,9 +3,9 @@ const pageRef = ref<HTMLElement | null>(null)
 
 const { pullDistance, isRefreshing, progress } = usePullToRefresh(pageRef, {
   onRefresh: async () => {
-    await refreshNuxtData() // or your own fetch/refresh logic
+    await window.location.reload() // or your own fetch/refresh logic
   },
-  threshold: 70,
+  threshold: 30,
 })
 </script>
 
