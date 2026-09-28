@@ -5,7 +5,7 @@ const { pullDistance, isRefreshing, progress } = usePullToRefresh(pageRef, {
   onRefresh: async () => {
     await window.location.reload() // or your own fetch/refresh logic
   },
-  threshold: 30,
+  threshold: 70,
 })
 
 const isRefreshing2 = ref(false)
@@ -22,7 +22,7 @@ const isRefreshing3 = computed(() => isRefreshing.value)
       <div
         class="h-6 w-6 rounded-full border-2 border-slate-400 border-t-slate-900"
         :class="isRefreshing2 ? 'animate-spin' : ''"
-        :style="!isRefreshing2 ? { transform: `rotate(${pullDistance * 360}deg)` } : {}"
+        :style="!isRefreshing2 ? { transform: `rotate(${progress * 360}deg)` } : {}"
       />
     </div>
 
