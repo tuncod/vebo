@@ -30,6 +30,6 @@ const isRefreshing3 = computed(() => isRefreshing.value)
     </div>
 
     <!-- Page content -->
-    bfjcjbcbcjfjjf <span @click="isRefreshing2 = !isRefreshing2">{{ isRefreshing2 }}</span> {{ progress }} | {{ pullDistance }}
+    bfjcjbcbcjfjjf <span @click="isRefreshing2 = !isRefreshing2">{{ isRefreshing }}</span> {{ progress }} | {{ pullDistance }}
   </div>
 </template>
