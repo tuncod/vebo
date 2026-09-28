@@ -7,6 +7,9 @@ const { pullDistance, isRefreshing, progress } = usePullToRefresh(pageRef, {
   },
   threshold: 30,
 })
+
+const isRefreshing2 = ref(false)
+const isRefreshing3 = computed(() => isRefreshing.value)
 </script>
 
 <template>
@@ -18,8 +21,8 @@ const { pullDistance, isRefreshing, progress } = usePullToRefresh(pageRef, {
     >
       <div
         class="h-6 w-6 rounded-full border-2 border-slate-400 border-t-slate-900"
-        :class="isRefreshing ? 'animate-spin' : ''"
-        :style="!isRefreshing ? { transform: `rotate(${progress() * 360}deg)` } : {}"
+        :class="isRefreshing2 ? 'animate-spin' : ''"
+        :style="!isRefreshing2 ? { transform: `rotate(${progress() * 360}deg)` } : {}"
       />
     </div>
 
