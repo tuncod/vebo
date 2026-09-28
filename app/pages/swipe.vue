@@ -27,6 +27,6 @@ const isRefreshing3 = computed(() => isRefreshing.value)
     </div>
 
     <!-- Page content -->
-    bfjcjbcbcjfjjf
+    bfjcjbcbcjfjjf <span @click="isRefreshing2 = !isRefreshing2">{{ isRefreshing2 }}</span>
   </div>
 </template>
