@@ -24,7 +24,7 @@ const isRefreshing3 = computed(() => isRefreshing.value)
     >
       <div class="absolute inset-0 bg-gradient-to-br from-pink-600 via-red-500 via-80% to-orange-500"></div>
       <div
-        class="relative z-10 h-6 w-6 rounded-full border-2 border-zinc-400 border-t-zinc-900"
+        class="relative z-10 h-6 w-6 rounded-full border-2 border-zinc-50 border-t-zinc-400"
         :class="isRefreshing ? 'animate-spin' : ''"
         :style="!isRefreshing ? { transform: `rotate(${progress * 360}deg)` } : {}"
       />
