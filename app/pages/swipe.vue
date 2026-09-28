@@ -19,14 +19,16 @@ const isRefreshing3 = computed(() => isRefreshing.value)
   <div ref="pageRef" class="min-h-screen overflow-y-auto">
     <!-- Pull indicator -->
     <div
-      class="flex items-center justify-center overflow-hidden transition-[height] bg-zinc-200 duration-200"
+      class="relative flex items-center justify-center overflow-hidden transition-[height] bg-zinc-200 duration-200"
       :style="{ height: `${pullDistance}px` }"
     >
+      <div class="absolute inset-0 bg-gradient-to-br from-pink-600 via-red-500 via-80% to-orange-500"></div>
       <div
-        class="h-6 w-6 rounded-full border-2 border-zinc-400 border-t-zinc-900"
+        class="relative z-10 h-6 w-6 rounded-full border-2 border-zinc-400 border-t-zinc-900"
         :class="isRefreshing ? 'animate-spin' : ''"
         :style="!isRefreshing ? { transform: `rotate(${progress * 360}deg)` } : {}"
       />
+      <div class="absolute inset-x-0 bottom-0 w-full bg-white h-3 rounded-t-3xl"></div>
     </div>
 
     <!-- Page content -->
