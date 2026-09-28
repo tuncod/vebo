@@ -20,7 +20,7 @@ const isRefreshing3 = computed(() => isRefreshing.value)
     <!-- Pull indicator -->
     <div
       class="relative flex items-center justify-center overflow-hidden transition-[height] bg-zinc-200 duration-200"
-      :style="{ height: `${pullDistance}px` }"
+      :style="{ height: `calc(${pullDistance}px + 1rem)` }"
     >
       <div class="absolute inset-0 bg-gradient-to-br from-pink-600 via-red-500 via-80% to-orange-500"></div>
       <div
