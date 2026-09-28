@@ -1,4 +1,4 @@
-import { ref, type Ref } from 'vue'
+import { ref, computed, type Ref } from 'vue'
 import { useEventListener } from '@vueuse/core'
 
 interface PullToRefreshOptions {
@@ -110,6 +110,6 @@ export function usePullToRefresh(
     pullDistance,
     isRefreshing,
     isPulling,
-    progress: () => Math.min(pullDistance.value / threshold, 1),
+    progress: computed(() => Math.min(pullDistance.value / threshold, 1)),
   }
 }
