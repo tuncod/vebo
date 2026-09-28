@@ -8,7 +8,7 @@ const { pullDistance, isRefreshing, progress } = usePullToRefresh(pageRef, {
     await delay(1000 * 10)
     window.location.reload() // or your own fetch/refresh logic
   },
-  threshold: 150,
+  threshold: 70,
 })
 
 const isRefreshing2 = ref(false)
